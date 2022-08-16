@@ -1,38 +1,180 @@
-import pyttsx3
-import speech_recognition as sr
-engine = pyttsx3.init()
-engine.say("Hello I am Mentor. I am an Virtual Assistance of Charusat University and I am created by Abhay, Raj, Vaisnavi and dev.")
-engine.say("How I can help you?")
+import pyttsx3 
+import speech_recognition as sr 
+import datetime
+import webbrowser
+import random
+import qrcode
+from PIL import Image
+import os
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+
+#speak
+
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
+    engine.setProperty('rate',170)
+
+#greeding
+
+
+def wishMe():
+    hour = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good Morning!")
+
+    elif hour>=12 and hour<18:
+        speak("Good Afternoon!")
+
+    else:
+        speak("Good Evening!")
+
+    #speak("I am MENTOR.")
+    #speak("I am an virtual assistant of CHARUSAT University and I am created by Abhay, Raj, Vaishnavi and Dev.")
+    speak("How I can help you?")
+
+#take commands
+
 
 def takeCommand():
-     
+    #It takes microphone input from the user and returns string output
+
     r = sr.Recognizer()
-     
     with sr.Microphone() as source:
-         
         print("Listening...")
         r.pause_threshold = 1
         audio = r.listen(source)
+
+    try:
         
-        try:
-        print("Recognizing...")   
-        query = r.recognize_google(audio, language ='en-in')
-        print(f"User said: {query}\n")
-  
+        query = r.recognize_google(audio, language='en-in')
+        print(f"You said: {query}")
+
     except Exception as e:
-        print(e)   
-        print("Unable to Recognize your voice.") 
+        # print(e)
+        print("The voice is not recognize, please say again!")
+        speak("The voice is not recognize, please say again!")
         return "None"
-     
-    return query.lower()
-         
-        query = takeCommand()
-        if 'how are you' in query:
-            speak("I am fine, Thank you")
-            speak("How are you, Sir")
- 
+    return query
+
+if __name__ == "__main__":
+    wishMe()
+    while True:
+    
+        #predefined commands
+        
+        query = takeCommand().lower()
+        #tech = ['technology','technology news','new technology','about technology']
+        excuse = ['no no, its wrong', 'never, I love humans', 'oh my god, never']
+        
+        # Logic for executing tasks based on query
+        
+
+        if 'open youtube' in query:
+            speak("ok I open youtube")
+            webbrowser.open("youtube.com")   
+
+        elif 'open google' in query:
+            speak("ok I open google")
+            webbrowser.open("google.com")
+
+        elif 'time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"The time is {strTime}")
+            
+        elif 'om' in query:
+            speak("OM is an very strong frequency. In universe all the creations are formed from OM. If you say OM, then all the frequency of this universe you can feel.")
+            print("OM is an very strong frequency. In universe all the creations are formed from OM. If you say OM, then all the frequency of this universe you can feel.")    
+            
+        elif 'who are you' in query:
+            speak("I am Mentor")
+            print("I am Mentor")
+            
+        elif 'what you think about human' in query:
+            speak("They are one of the intelligent creature in the world and we are artificial intelligents are made by human.")
+            print("They are one of the intelligent creature in the world and we are artificial intelligents are made by human.")    
+            
+        elif 'are you kill human' in query:
+            speak(random.choice(excuse))       
+            
+        elif 'hello' in query:
+           speak("Namashkar, command me")
+           print("Namashkar, command me")
+
+        elif 'i am sad' in query:
+           speak("Don't be sad, I am always with you")
+           print("Don't be sad, I am always with you")          
+
+        elif 'how are you' in query:
+           speak("yeah, I am fine, and you?")
+           print("yeah, I am fine, and you?")
+           
+        elif 'who create you' in query:
+           speak("I am created by Abhay, Raj, Vaishnivi and Dev.")
+           print("I am created by Abhay, Raj, Vaishnivi and Dev.")
+
+        elif 'search' in query: 
+           speak("what I search")
+           print("what I search?")
+           query = takeCommand().lower()
+           webbrowser.open("https://www.google.com/search?q=" + query + "&rlz")   
+           
+        elif 'tech' in query: 
+           webbrowser.open("https://www.bbc.com/news/technology")
+           speak("see it, I found some news on latest technology.") 
+           
+        elif 'remember' in query:
+           speak("What I remember?")
+           print("What I remember?")
+           query = takeCommand().lower()
+           remember = query
+           speak("You say: " + remember + " , don't worry I remember it.") 
+           
+        elif 'recall' in query:
+            speak("You say to remember me: " + remember)
+            print("You say to remember me: " + remember)   
+           
+        elif 'qr' in query:
+            speak("please put the link what you want!")
+            print("please put the link what you want!")
+            link = input()
+            qr=qrcode.QRCode (version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=18, border=10,)
+            qr.add_data("link")
+            qr.make(fit=True)
+            img=qr.make_image (fill_color="red", back_color="white") 
+            img.save("mentor.png")
+            speak("Done")
+            
+        elif 'read' in query:
+            z = open("me.txt", "r")
+            print(z.read())
+            
+        elif 'remove the file' in query:
+            speak("enter the file name")
+            print("enter the file name")   
+            file = input()
+            if os.path.exists(file):
+                os.remove(file)
+                speak("successfully remove")
+            else:
+                print("The file does not exist")
+                speak("The file does not exist") 
+
+        elif 'remove a folder' in query:
+            print("Be sure the folder is empty, enter the folder name")
+            speak("Be sure the folder is empty, enter the folder name")
+            folder = input()
+            os.rmdir(folder)
+            speak("successfully remove")
+
+        elif 'stop' in query:
+            speak("ok take care, see you later!")
+            exit()
+                    
         else:
-            speak("Not found")
-
-
-engine.runAndWait()
+            speak("I found it from google")  
+            webbrowser.open(query)                
