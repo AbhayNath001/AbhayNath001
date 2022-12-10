@@ -12,6 +12,16 @@ from plyer import notification          #pip install plyer      #pip install not
 import pyautogui                        #pip install PyAutoGUI
 import sqlite3                          #pip install db-sqlite3
 import speedtest                        #pip install speedtest-cli
+import wikipedia as googleScrap         #pip install scrap-engine
+import pywhatkit                        #pip install pywhatkit
+from pdf2docx import parse              #pip install pdf2docx   #pip install parse
+import PyPDF2                           #pip install PyPDF2
+from pdf2image import convert_from_path #pip3 install pdf2image #choco install poppler
+from docx2pdf import convert            #pip install docx2pdf
+import numpy as np
+from win32api import GetSystemMetrics
+import cv2
+import time
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -123,7 +133,8 @@ def takeCommand():
     with sr.Microphone(device_index=0) as source:
         print("Listening...")
         r.pause_threshold = 1
-        audio = r.listen(source)
+        r.energy_threshold = 300
+        audio = r.listen(source,0,4)
         print("Recognizing...")
 
     try:
@@ -138,6 +149,7 @@ def takeCommand():
     return query
 
 if __name__ == "__main__":
+
     print("Do you have an account or not? (Yes or No)")
     speak("Do you have an account or not (Yes or No)")
     acc1 = input('Yes or No: ').lower()
@@ -159,7 +171,7 @@ if __name__ == "__main__":
         timeee = ['time','the time','what is the time','what is the time now','tell me the time','tell me time','check the time']
         humannn = ['what you think about human','what about human','human','human according to you']
         kill_human = ['are you kill human','are you kill humans','are you destroy humans','are you destroy human','are you attack on humans','are you attack on human']
-        hello_hi = ['hello','hi','hey','whats up','namashkar']
+        hello_hi = ['hello','hi','hai','hey','whats up','namashkar']
         saddd = ['i am sad','not well','sad','i am broken','i depressed','crying','cry']
         searchhh = ['search','search on google','find on google','check on google']
         qr_code = ['create qr','create qr code','create a qr','create a qr code','make a qr','make a qr code','generate qr','generate qr code','generate a qr','generate a qr code']
@@ -173,15 +185,16 @@ if __name__ == "__main__":
         sch_show = ['show my schedule','what is my schedule','what is the schedule','show schedule','show the schedule']
         ss = ['take screenshot','take a screenshot','click screenshot','click a screenshot','get screenshot','get a screenshot']
         inter_spd = ['check internet speed','check my internet speed','check net speed','what is my net speed','what is my internet speed','show my internet speed','show my net speed','check the speed of my internet','check the speed of my net']
-        #history_dlt = ['clear all history from','clear my history from','delete all history from','delete my history from','remove all history from','remove my history from']
-       
+        dateee = ['what is the date','what is the date today','show the date','show todays date']
+        cont = ['convert','convert a file','converting','converted a file','converting a file','convert file','converting file','converted file']
+        ssr = ['open screen recorder','open screen recording','start screen recoder','start screen recording','screen recording']
        
         # Logic for executing tasks based on query
 
 
         if 'open youtube' in query:
             speak("ok I open youtube")
-            webbrowser.open("youtube.com")  
+            webbrowser.open("youtube.com")
 
         elif 'open google' in query:
             speak("ok I open google")
@@ -203,9 +216,18 @@ if __name__ == "__main__":
             speak(results)
 
         elif query in timeee:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S%p")
+            strTime = datetime.datetime.now().strftime("%H:%M:%S %p")
             print(strTime)
             speak(f"The time is {strTime}")
+           
+        elif query in dateee:
+            year = int(datetime.datetime.now().year)
+            month = int(datetime.datetime.now().month)
+            date = int(datetime.datetime.now().day)
+            print(str(date) +' : '+ str(month) +' : '+ str(year))
+            speak(int(date))
+            speak(int(month))
+            speak(int(year))
            
         elif query in omm:
             speak("OM is an very strong frequency. This is the frequency of Universe. In universe all the creations are formed from OM. If you say OM, then all the frequency of this universe you can feel.")
@@ -217,7 +239,11 @@ if __name__ == "__main__":
            
         elif query in humannn:
             speak("They are one of the intelligent creature in the world and we are artificial intelligents are made by human.")
-            print("They are one of the intelligent creature in the world and we are artificial intelligents are made by human.")    
+            print("They are one of the intelligent creature in the world and we are artificial intelligents are made by human.")
+
+        elif 'fine' in query:
+            speak("this is my pleaser!")
+            print("this is my pleaser!")        
            
         elif query in kill_human:
             speak(random.choice(excuse))      
@@ -237,10 +263,6 @@ if __name__ == "__main__":
         elif 'who create you' in query:
             speak("I am created by Abhay, Raj, Vaishnivi and Dev.")
             print("I am created by Abhay, Raj, Vaishnivi and Dev.")
-           
-        elif 'nothing' in query:
-            speak("ok, take time")
-            print("ok, take time")  
            
         elif query in rand:
             speak("ok, I generate this")
@@ -329,20 +351,17 @@ if __name__ == "__main__":
         elif query in sch:
             speak("Do you want to clear old schedules? (Plz write YES or NO)")
             qu = input("Yes or No: ").lower()    
-            #if "yes" in qu:
-             #   speak("clear all previous tasks")
-                # file = open("note.txt","w")
-                # file.write(f"")
-                # file.close()
-             #   speak("How many tasks you want to add?")
-             #   no_tasks = int(input("How many tasks you want to add? :- "))
-             #   i = 0
-             #   for i in range(no_tasks):
-             #       speak("Enter your task")
-             #       tasks.append(input("Enter your task :- "))
-                    # file = open("note.txt","a")
-                    # file.write(f"{i}. {tasks[i]}\n")
-                    # file.close()
+            # if "yes" in qu:
+               # speak("clear all previous tasks")
+               # conn=sqlite3.connect("sqlite.db")
+               # inp = input()
+               # speak("How many tasks you want to add?")
+               # no_tasks = int(input("How many tasks you want to add? :- "))
+               # i = 0
+               # for i in range(no_tasks):
+                   # speak("Enter your task")
+               # conn.commit()
+               # conn.close()    
             if "no" in qu:
                 i = 0
                 speak("How many tasks you want to add?")
@@ -379,6 +398,33 @@ if __name__ == "__main__":
             im.save(sss + ".png")
             speak("successfully save")
            
+        elif query in ssr:
+            width = GetSystemMetrics(0)
+            heigth = GetSystemMetrics(1)
+            dim = (width,heigth)
+            f = cv2.VideoWriter_fourcc(*"XVID")
+            x = input("Enter your output file: ")
+            x = x.replace(".mp4","")
+            x = x + ".mp4"
+            output = cv2.VideoWriter(x,f,30.0,dim)
+            now_start_time = time.time()
+            dur = 5400 #1.5 hours
+            end_time = now_start_time + dur
+            speak("Start")
+            while True:
+                # query1 = takeCommand().lower()
+                image = pyautogui.screenshot()
+                frame_1 = np.array(image)
+                frame = cv2.cvtColor(frame_1,cv2.COLOR_BGR2RGB)
+                output.write(frame)
+                c_time = time.time()
+                if c_time > end_time:
+                    break
+                # elif 'stop screen recording' in query1 or 'end' in query1:
+                    # break
+            output.release()
+            speak("Stop")
+           
         elif query in inter_spd:
             print("Please wait, it may take some time....")
             speak("Please wait, it may take some time")
@@ -392,14 +438,77 @@ if __name__ == "__main__":
             speak("upload speed is: " + str(format_upload_net) + " Mbps")
             speak("download speed is: " + str(format_download_net) + " Mbps")
            
-        # elif 'clear my all history from' in query or 'clear my history from' in query or 'delete my all history from' in query or 'delete my history from' in query or 'remove my all history from' in query or 'remove my history from' in query:
-            # query = query.replace('clear my all history from','').lower()
-            # webbrowser.open("https://www.google.com/search?q=" + query + "&rlz")
-            # pyautogui.hotkey('ctrl','h')
-            # pyautogui.hotkey('ctrl','a')
-            # pyautogui.press('delete')
-            # pyautogui.press('enter')
+        elif 'clear my all history from' in query or 'clear my history from' in query or 'clear all history from' in query or 'delete my all history from' in query or 'delete my history from' in query or 'delete all history from' in query or 'remove my all history from' in query or 'remove my history from' in query or 'remove all history from' in query or 'remove history from' in query or 'delete history from' in query or 'clear history from' in query:
+            query = query.replace('clear my all history from','').lower()
+            query = query.replace('clear my history from','').lower()
+            query = query.replace('delete my all history from','').lower()
+            query = query.replace('delete my history from','').lower()
+            query = query.replace('remove my all history from','').lower()
+            query = query.replace('remove my history from','').lower()
+            query = query.replace('remove history from','').lower()
+            query = query.replace('delete history from','').lower()
+            query = query.replace('clear history from','').lower()
+            query = query.replace('clear all history from','').lower()
+            query = query.replace('delete all history from','').lower()
+            query = query.replace('remove all history from','').lower()
+            speak("take a second")
+            pyautogui.press('super')
+            pyautogui.write(query)
+            pyautogui.press('enter')
+            pyautogui.sleep(3)
+            pyautogui.hotkey('ctrl','h')
+            pyautogui.sleep(1)
+            pyautogui.hotkey('ctrl','a')
+            pyautogui.sleep(1)
+            pyautogui.press('delete')
+            pyautogui.sleep(1)
+            pyautogui.press('enter')
+            pyautogui.hotkey('alt','f4')
+            speak("Removed all history")
+           
+        elif 'close' in query:
+            pyautogui.hotkey('alt','f4')
+            speak("close")
 
+        elif 'print' in query:
+            pyautogui.hotkey('ctrl','p')
+            pyautogui.sleep(1)
+            pyautogui.press('enter')
+            speak("printed")  
+
+        elif 'reload' in query or 'refresh' in query:
+            pyautogui.hotkey('ctrl','r')
+            speak("reload")  
+           
+        elif 'stop video' in query:
+            pyautogui.press('k')
+            speak("stop")    
+           
+        elif 'on video' in query:
+            pyautogui.press('k')
+            speak("on")    
+
+        elif 'what is' in query or 'who is' in query:
+            query1 =  query.replace("what is","")
+            query1 =  query.replace("who is","")
+            speak("This Is What I Found On The Web!")
+            try:
+                result = wikipedia.summary(query, sentences=2)
+                print(result)
+                speak(result)
+            except:
+                speak("No Speakable Data Available!")
+               
+        elif 'how to' in query:        
+            query =  query.replace("how to","")
+            pywhatkit.search("\""+query+"\"")
+            try:
+                results = googleScrap.summary(query,2)
+                print(results)
+                speak(results)
+            except:
+                speak("No Speakable Data Available!")    
+   
         elif 'open' in query:
             query = query.replace('open','')
             pyautogui.press('super')
@@ -407,10 +516,79 @@ if __name__ == "__main__":
             pyautogui.press('enter')
             speak("done")
            
+        elif query in cont:
+            print("which type of convertion?")
+            speak("which type of convertion")
+            query2 = input("pdf to docx / pdf to txt / pdf to jpeg / docx to pdf: ")
+            if 'pdf to docx' in query2:
+                x = input("Enter your file name: ")
+                x = x.replace('.pdf','')
+                pdf_file = x+'.pdf'
+                y = input("Give a name of your output file: ")
+                y = y.replace('.docx','')
+                word_file = y+'.docx'
+                print("converting...")
+                speak("converting...")
+                parse(pdf_file, word_file, start=0, end=None)
+                print("Done")
+                speak("Done")
+            elif 'pdf to txt' in query2:
+                x = input("Enter your file name: ")
+                x = x.replace('.pdf','')
+                pdf_file = x+'.pdf'
+                y = input("Give a name of your output file: ")
+                y = y.replace('.txt','')
+                word_file = y+'.txt'
+                pdfFileObject = open(pdf_file,'rb')
+                print("converting...")
+                speak("converting...")
+                pdfReader = PyPDF2.PdfFileReader(pdfFileObject)
+                print (f"No of Pages: {pdfReader.numPages}")
+                pageObject = pdfReader.getPage(0)
+                text = pageObject.extractText()
+                pdfFileObject.close()
+                with open(word_file,"w") as file:
+                    file.writelines(text)
+                print("Done")    
+                speak("Done")  
+            elif 'pdf to jpeg' in query2:
+                x = input("Enter your file name: ")
+                x = x.replace('.pdf','')
+                pdf_file = x+'.pdf'
+                print("converting...")
+                speak("converting...")
+                images = convert_from_path(pdf_file)
+                for image in images:
+                    image.save(f"{images.index(image)}.jpg", "JPEG")
+                print("Done")    
+                speak("Done")  
+            elif 'docx to pdf' in query2:
+                docx_file = input("Enter your file name: ")
+                docx_file = docx_file.replace('.docx','')
+                docx_file = docx_file + ".docx"
+                print("Please wait, it may take some time....")
+                speak("Please wait, it may take some time")
+                print("converting...")
+                speak("converting...")
+                convert(docx_file)
+                print("Done")    
+                speak("Done")
+
+        elif 'write' in query:
+            pyautogui.hotkey('ctrl','e')
+            speak("say what you want to search")
+            query3 = takeCommand().lower()
+            pyautogui.write(query3)
+            pyautogui.press('enter')
+            speak("ok")
+           
+        elif 'enter' in query:
+            pyautogui.press('enter')
+            speak("enter")    
+           
         elif 'stop' in query:
             speak("ok take care, see you later!")
             exit()
            
         else:
-            speak("Sorry I have no idea, You can search in google")
-            print("Sorry I have no idea, You can search in google")  
+            print("")  
