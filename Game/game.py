@@ -6,11 +6,11 @@ from os import listdir
 from os.path import isfile, join
 pygame.init()
 
-pygame.display.set_caption("Abhay")
+pygame.display.set_caption("Abhay Nath")
 
-WIDTH, HEIGHT = 1000, 800
+WIDTH, HEIGHT = 1500, 900
 FPS = 60
-PLAYER_VEL = 5
+PLAYER_VEL = 7
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 
@@ -55,7 +55,7 @@ def get_block(size):
 
 class Player(pygame.sprite.Sprite):
     COLOR = (255, 0, 0)
-    GRAVITY = 1
+    GRAVITY = 1.2
     SPRITES = load_sprite_sheets("MainCharacters", "MaskDude", 32, 32, True)
     ANIMATION_DELAY = 3
 
@@ -201,7 +201,6 @@ class Fire(Object):
         if self.animation_count // self.ANIMATION_DELAY > len(sprites):
             self.animation_count = 0
 
-
 def get_background(name):
     image = pygame.image.load(join("assets", "Background", name))
     _, _, width, height = image.get_rect()
@@ -284,12 +283,26 @@ def main(window):
     block_size = 96
 
     player = Player(100, 100, 50, 50)
-    fire = Fire(100, HEIGHT - block_size - 64, 16, 32)
-    fire.on()
+    fire = Fire(510, HEIGHT - block_size - 324, 16, 32)
+    fire1 = Fire(1110, HEIGHT - block_size - 64, 16, 32)
+    fire2 = Fire(1510, HEIGHT - block_size - 324, 16, 32)
+    fire.on(),fire1.on(),fire2.on()
     floor = [Block(i * block_size, HEIGHT - block_size, block_size)
-             for i in range(-WIDTH // block_size, (WIDTH * 2) // block_size)]
-    objects = [*floor, Block(0, HEIGHT - block_size * 2, block_size),
-               Block(block_size * 3, HEIGHT - block_size * 4, block_size), fire]
+             for i in range(-WIDTH // block_size, (WIDTH * 20) // block_size)]
+    objects = [*floor,Block(block_size * 1, HEIGHT - block_size * 3.7, block_size),fire,fire1,fire2,
+               Block(block_size * 2, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 3, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 4, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 5, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 6, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 8, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 9, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 10, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 12, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 13, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 14, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 15, HEIGHT - block_size * 3.7, block_size),
+               Block(block_size * 16, HEIGHT - block_size * 3.7, block_size)]
 
     offset_x = 0
     scroll_area_width = 200
@@ -308,7 +321,7 @@ def main(window):
                     player.jump()
 
         player.loop(FPS)
-        fire.loop()
+        fire.loop(),fire1.loop(),fire2.loop()
         handle_move(player, objects)
         draw(window, background, bg_image, player, objects, offset_x)
 
