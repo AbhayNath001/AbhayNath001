@@ -51,6 +51,14 @@ def get_block(size):
     rect = pygame.Rect(96, 0, size, size)
     surface.blit(image, (0, 0), rect)
     return pygame.transform.scale2x(surface)
+    
+def get_block_1(size):
+    path = join("assets", "Terrain", "Terrain.png")
+    image = pygame.image.load(path).convert_alpha()
+    surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
+    rect = pygame.Rect(96, 128, size, size)
+    surface.blit(image, (0, 0), rect)
+    return pygame.transform.scale2x(surface)    
 
 
 class Player(pygame.sprite.Sprite):
@@ -169,6 +177,13 @@ class Block(Object):
         block = get_block(size)
         self.image.blit(block, (0, 0))
         self.mask = pygame.mask.from_surface(self.image)
+        
+class Block_1(Object):
+    def __init__(self, x, y, size):
+        super().__init__(x, y, size, size)
+        block = get_block_1(size)
+        self.image.blit(block, (0, 0))
+        self.mask = pygame.mask.from_surface(self.image)        
 
 
 class Fire(Object):
@@ -288,24 +303,40 @@ def main(window):
     fire2 = Fire(1510, HEIGHT - block_size - 324, 16, 32)
     fire.on(),fire1.on(),fire2.on()
     floor = [Block(i * block_size, HEIGHT - block_size, block_size)
-             for i in range(-WIDTH // block_size, (WIDTH * 20) // block_size)]
+             for i in range(-WIDTH // block_size, (WIDTH * 1) // block_size)]
     objects = [*floor,Block(block_size * 1, HEIGHT - block_size * 3.7, block_size),fire,fire1,fire2,
                Block(block_size * 2, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 3, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 4, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 5, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 6, HEIGHT - block_size * 3.7, block_size),
+               
                Block(block_size * 8, HEIGHT - block_size * 6, block_size),
                Block(block_size * 9, HEIGHT - block_size * 6, block_size),
                Block(block_size * 10, HEIGHT - block_size * 6, block_size),
-               Block(block_size * 12, HEIGHT - block_size * 3.7, block_size),
+               
                Block(block_size * 13, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 14, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 15, HEIGHT - block_size * 3.7, block_size),
-               Block(block_size * 16, HEIGHT - block_size * 3.7, block_size)]
+               Block(block_size * 16, HEIGHT - block_size * 3.7, block_size),
+               
+               Block(block_size * 20, HEIGHT - block_size * 3.7, block_size),
+               
+               Block(block_size * 25, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 26, HEIGHT - block_size * 6, block_size),
+               Block_1(block_size * 27, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 28, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 29, HEIGHT - block_size * 6, block_size),
+               Block(block_size * 30, HEIGHT - block_size * 6, block_size),
+               
+               Block(block_size * 33, HEIGHT - block_size * 1, block_size),
+               Block(block_size * 38, HEIGHT - block_size * 3, block_size),
+               Block(block_size * 40, HEIGHT - block_size * 5.5, block_size),
+               Block_1(block_size * 41, HEIGHT - block_size * 5.5, block_size),
+               Block(block_size * 42, HEIGHT - block_size * 5.5, block_size),]
 
     offset_x = 0
-    scroll_area_width = 200
+    scroll_area_width = 1000
 
     run = True
     while run:
