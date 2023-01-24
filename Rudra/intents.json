@@ -1,0 +1,62 @@
+{
+	"intents":[
+		{
+			"tag":"greeting",
+			"patterns": ["hello", "hii", "hey", "wake up", "rudra", "namashkar"
+			],
+			"responses":["Hello", "How Are You.", "I am always For You", "yes, I am here", "Namashkar", "Here's Your Assistant."
+			]
+		},
+		{
+			"tag":"bye",
+			"patterns":["bye", "good bye", "goodbye", "see you later", "sleep", "exit", "see you soon"
+			],
+			"responses":["ok Bye.", "I am Going.", "Bye bye.", "Good Bye", "It'll be Nice To Meet You Again.","See You Later"
+			]
+		},
+		{
+			"tag":"health",
+			"patterns": ["how are you", "how you", "are you fine?", "are you good", "what's up"
+			],
+			"responses":["Fine.", "Perfect.", "Cool.", "Like You.", "I'm Fine. Are you Fine?"
+			]
+		},
+		{
+			"tag":"good_health",
+			"patterns": ["fine", "Perfect.", "Cool.", "Like You.", "I am Fine.", "good", "well", "not bad", "I am good"
+			],
+			"responses":["That's great to hear!", "I'm glad you're doing well. How can I help you today?", "Alright, is there anything you want to talk about?", "Ok, let me know if you need anything.",
+						 "Are you Fine? I'm Fine.", "I'm happy to hear that, do you need help with anything?"
+			]
+		},
+		{
+			"tag":"bad_health",
+			"patterns": ["not fine", "I am not fine", "not well", "bad", "I am suffer", "not good", "I am not well"
+			],
+			"responses":["I'm sorry to hear that. Can you tell me what's been going on?", "I understand. Is there anything I can do to help?", "I'm here for you. Would you like to talk about what's been causing you to feel unwell?",
+						 "I'm sorry you're not feeling well. Is there anything you need help with?", "I'm sorry to hear that."
+			]
+		},
+		{
+			"tag":"time",
+			"patterns": ["what is the time", "time", "tell me the time", "what's the time now", "show me the time", "tell me the time"
+			],
+			"responses":["time"
+			]
+		},
+		{
+			"tag":"date",
+			"patterns": ["what is the date", "date", "tell me the date", "what's the date today", "show me the date", "tell me the date", "today's date"
+			],
+			"responses":["date"
+			]
+		},
+		{
+			"tag":"day",
+			"patterns": ["what is the day", "day", "tell me the day", "what's the day today", "show me the day", "tell me the day", "today's day"
+			],
+			"responses":["day"
+			]
+		}
+	]
+}
