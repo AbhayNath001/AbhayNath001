@@ -8,6 +8,13 @@
 			]
 		},
 		{
+			"tag":"task",
+			"patterns": ["what you can do for me", "what you can do for us", "which task you can perform", "what is your ability", "tell what you can do", "what you can perform"
+			],
+			"responses":["I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, like:\n I can tell the present Date, Time and Day,\n  I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also"
+			]
+		},
+		{
 			"tag":"bye",
 			"patterns":["bye", "good bye", "goodbye", "see you later", "sleep", "exit", "see you soon"
 			],
