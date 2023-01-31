@@ -3,7 +3,7 @@ import json
 import torch                                                                #pip install torch
 from brain import NeuralNet
 from NeuralNetwork import bag_of_words, tokenize
-import datetime                                             #pip install DateTime
+import datetime                                                             #pip install DateTime
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 with open("intents.json",'r') as json_data:
