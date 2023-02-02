@@ -9,7 +9,7 @@ pygame.init()
 pygame.display.set_caption("Abhay Nath")
 
 WIDTH, HEIGHT = 1500, 900
-FPS = 60
+FPS = 55
 PLAYER_VEL = 7
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -51,14 +51,22 @@ def get_block(size):
     rect = pygame.Rect(96, 0, size, size)
     surface.blit(image, (0, 0), rect)
     return pygame.transform.scale2x(surface)
-    
+   
 def get_block_1(size):
     path = join("assets", "Terrain", "Terrain.png")
     image = pygame.image.load(path).convert_alpha()
     surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
     rect = pygame.Rect(96, 128, size, size)
     surface.blit(image, (0, 0), rect)
-    return pygame.transform.scale2x(surface)    
+    return pygame.transform.scale2x(surface)  
+
+def get_block_2(size):
+    path = join("assets", "Terrain", "Terrain.png")
+    image = pygame.image.load(path).convert_alpha()
+    surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
+    rect = pygame.Rect(0, 0, size, size)
+    surface.blit(image, (0, 0), rect)
+    return pygame.transform.scale2x(surface)      
 
 
 class Player(pygame.sprite.Sprite):
@@ -73,7 +81,7 @@ class Player(pygame.sprite.Sprite):
         self.x_vel = 0
         self.y_vel = 0
         self.mask = None
-        self.direction = "left"
+        self.direction = "right"
         self.animation_count = 0
         self.fall_count = 0
         self.jump_count = 0
@@ -177,11 +185,18 @@ class Block(Object):
         block = get_block(size)
         self.image.blit(block, (0, 0))
         self.mask = pygame.mask.from_surface(self.image)
-        
+       
 class Block_1(Object):
     def __init__(self, x, y, size):
         super().__init__(x, y, size, size)
         block = get_block_1(size)
+        self.image.blit(block, (0, 0))
+        self.mask = pygame.mask.from_surface(self.image)
+
+class Block_2(Object):
+    def __init__(self, x, y, size):
+        super().__init__(x, y, size, size)
+        block = get_block_2(size)
         self.image.blit(block, (0, 0))
         self.mask = pygame.mask.from_surface(self.image)        
 
@@ -297,7 +312,7 @@ def main(window):
 
     block_size = 96
 
-    player = Player(100, 100, 50, 50)
+    player = Player(100, 100, 50, 50)       #100,100,50,50
     fire = Fire(510, HEIGHT - block_size - 324, 16, 32)
     fire1 = Fire(1110, HEIGHT - block_size - 64, 16, 32)
     fire2 = Fire(1510, HEIGHT - block_size - 324, 16, 32)
@@ -333,10 +348,30 @@ def main(window):
                Block(block_size * 38, HEIGHT - block_size * 3, block_size),
                Block(block_size * 40, HEIGHT - block_size * 5.5, block_size),
                Block_1(block_size * 41, HEIGHT - block_size * 5.5, block_size),
-               Block(block_size * 42, HEIGHT - block_size * 5.5, block_size),]
+               Block(block_size * 42, HEIGHT - block_size * 5.5, block_size),
+               Block(block_size * 43, HEIGHT - block_size * 5.5, block_size),
+               
+               Block_2(block_size * 46, HEIGHT - block_size * 4, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 4, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 6, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 7, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 8, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 9, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 10, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 47, HEIGHT - block_size * 1, block_size),
+               Block_2(block_size * 48, HEIGHT - block_size * 4, block_size),
+               Block_2(block_size * 50, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 49, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 51, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 52, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 51, HEIGHT - block_size * 1, block_size),
+               Block_2(block_size * 52, HEIGHT - block_size * 0, block_size),
+               ]
 
-    offset_x = 0
-    scroll_area_width = 1000
+    offset_x = 0         #0
+    scroll_area_width = 900
 
     run = True
     while run:
