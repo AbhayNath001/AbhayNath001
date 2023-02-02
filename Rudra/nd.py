@@ -1,4 +1,4 @@
-import matplotlib
+import matplotlib                   #pip install matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -18,3 +18,7 @@ def Listen():
         return "None"
     query = str(query)    
     return query.lower()
+    
+def Text():
+    query = input("input: ")
+    print(f"You said: {query}")

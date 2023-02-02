@@ -24,7 +24,7 @@ model.eval()
 
 name = "Rudra"
 
-from Listen import Listen
+from Listen import Listen, Text
 from Speak import Say
 from Task import NonInputExecution
 from Task import InputExecution
@@ -42,7 +42,7 @@ def wishMe():
 wishMe()        
 
 def Main():
-    sentence = Listen()
+    sentence = Listen() #Text()
     sentence = tokenize(sentence)
     X = bag_of_words(sentence,all_words)
     X = X.reshape(1,X.shape[0])
@@ -70,6 +70,9 @@ def Main():
                     
                 elif "day" in reply:
                     NonInputExecution(reply) 
+                    
+                elif "task" in reply:
+                    NonInputExecution(reply)
 
                 elif "screenshot" in reply:
                     NonInputExecution(reply)
@@ -105,7 +108,10 @@ def Main():
                     InputExecution(reply,sentence)
                     
                 elif "zip_file" in reply:
-                    InputExecution(reply,sentence)    
+                    InputExecution(reply,sentence)  
+
+                elif "Motion_Detect" in reply:
+                    InputExecution(reply,sentence) 
                 
                 else:    
                     Say(reply) 
