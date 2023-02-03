@@ -52,7 +52,7 @@ def Main():
     tag = tags[predicted.item()]
     probs = torch.softmax(output,dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.50:
+    if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 reply = random.choice(intent["responses"])
@@ -81,6 +81,9 @@ def Main():
                     NonInputExecution(reply)
                     
                 elif "clear_browser_history" in reply:
+                    NonInputExecution(reply)
+                    
+                elif "task" in reply:
                     NonInputExecution(reply)
                     
                 elif "close" in reply:

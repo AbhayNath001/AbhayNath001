@@ -1,6 +1,9 @@
 import datetime                                             #pip install DateTime
 from Speak import Say, Just_Say
 import wikipedia                                            #pip install wikipedia
+import webbrowser                                           #pip install pycopy-webbrowser
+import pywhatkit                                            #pip install pywhatkit
+import wikipedia as googleScrap                             #pip install scrap-engine
 import qrcode                                               #pip install qrcode
 import pyautogui                                            #pip install PyAutoGUI
 import speedtest                                            #pip install speedtest-cli
@@ -45,8 +48,8 @@ def Day():
     Say(day)
     
 def video_downloader():
-    Just_Say("put the link")
-    Link = input("put the link: ")
+    Just_Say("put the youtube link")
+    Link = input("put the youtube link: ")
     try:
         yt = YouTube(Link)
         Say("Downloading...")
@@ -198,6 +201,10 @@ def Motion_Detect():
     cap.release()
     cv2.destroyAllWindows()
     
+def task():
+        Say("I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, see the below:")
+        print("\n I can tell the present Date, Time and Day,\n  I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also")
+    
 #All non input functions are here___________________________________________________________________________________________________________________   
     
 def NonInputExecution(query):
@@ -213,7 +220,8 @@ def NonInputExecution(query):
         Day()
 
     elif "task" in query:
-        Say("I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, like:\n I can tell the present Date, Time and Day,\n I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also")
+        Say("I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, see below:") 
+        print(" I can tell the present Date, Time and Day,\n I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also")
         
     elif "screenshot" in query:
         im = pyautogui.screenshot()
@@ -253,23 +261,29 @@ def NonInputExecution(query):
             pyautogui.hotkey('alt','f4')
             Say("Removed all history")
             
-    elif 'close' in query:
-        pyautogui.hotkey('alt','f4')
-        Say("close")
+    # elif 'close' in query:
+        # pyautogui.hotkey('alt','f4')
+        # Say("close")
                 
 #All input functions are here_______________________________________________________________________________________________________________________                
 
 def InputExecution(tag,query):
     
     if "wikipedia" in tag:
-        name = str(query).replace("who is","").replace("about","").replace("what is","").replace("wikipedia","")
+        name = str(query).replace("who is","").replace("about","").replace("what is","").replace("wikipedia","").replace("who are","").replace("whose","").replace("who was","").replace("who were","").replace("who have been","").replace("in regards to","").replace("in relation to","").replace("on the subject of","").replace("relating to","").replace("touching on","").replace("what means","").replace("what signifies","").replace("what represents","").replace("what signifies","").replace("what denotes","").replace("the free encyclopedia","").replace("the open source encyclopedia","").replace("the online reference","").replace("the crowd-sourced encyclopedia","").replace("tell me about","").replace("how to","")
         Just_Say("How many lines I read?")
         l_n = input("How many lines I read: ")
         try:
+            name = name.replace("[","").replace("]","").replace("'","").replace(",","")
             result = wikipedia.summary(name, sentences=l_n)
             Say(result)
         except:
-            Say("No Speakable Data Available!")
+            pywhatkit.search(name)
+            try:
+                result = googleScrap.summary(name,2)
+                Say(result)
+            except:
+                Say("No speakable data found")
         
     elif "qr_code" in tag:
             Just_Say("please put the link what you want!")
@@ -363,3 +377,6 @@ def InputExecution(tag,query):
         
     elif "Motion_Detect" in tag:
         Motion_Detect()
+        
+    elif "task" in tag:
+        task() 
