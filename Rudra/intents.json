@@ -2,52 +2,49 @@
 	"intents":[
 		{
 			"tag":"greeting",
-			"patterns": ["hello", "hii", "hey", "wake up", "rudra", "namashkar", "Good morning", "good afternoon","good evening"
+			"patterns": ["hello", "hii", "hai", "hi", "hey", "wake", "up", "rudra", "namashkar", "Good morning", "good afternoon", "good evening", "morning", "afternoon", "evening"
 			],
 			"responses":["Hello", "How Are You.", "I am always For You", "yes, I am here", "Namashkar", "Here's Your Assistant."
 			]
 		},
 		{
 			"tag":"task",
-			"patterns": ["what you can do for me", "what you can do for us", "which task you can perform", "what is your ability", "tell what you can do", "what you can perform"
+			"patterns": ["what you can do for me", "what you can do for us", "which task you can perform", "what is your ability", "tell what you can do", "what you can perform", "task", "ability", "perform", "what you can", "what you can do", "your ability"
 			],
-			"responses":["I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, like:\n I can tell the present Date, Time and Day,\n  I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also"
+			"responses":["task"
 			]
 		},
 		{
 			"tag":"bye",
-			"patterns":["bye", "good bye", "goodbye", "see you later", "sleep", "exit", "see you soon"
+			"patterns":["bye", "good bye", "goodbye", "see you later", "sleep", "exit", "see you soon", "see you", "soon"
 			],
 			"responses":["ok Bye.", "I am Going.", "Bye bye.", "Good Bye", "It'll be Nice To Meet You Again.","See You Later"
 			]
 		},
 		{
 			"tag":"sad",
-			"patterns":["I'm feeling really down today.", "I'm so sad, I don't know what to do", "I'm having a hard time", "I feel like crying", "I'm feeling really low", "I'm so depressed", "I'm feeling really hopeless", "I'm feeling really blue", "I'm feeling really melancholy.", "I'm feeling really despondent",
-						"I'm feeling really heartbroken", "I'm feeling really heavy-hearted.", "I'm feeling really dejected", "I'm feeling really crestfallen", "I'm feeling really glum.", "I'm feeling really down in the dumps", "I'm feeling really low-spirited", "I'm feeling really downcast.", "I'm feeling really dispirited.",
-						"I am so sad", "I am not well", "I am depressed", "I am sad", "I am upset"
+			"patterns":["i'm", "feeling", "really down today.", "i am", "so sad", "I don't know what to do", "I'm having a hard time", "I feel like crying", "I'm feeling really low", "i am so depressed", "I'm feeling really hopeless", "i am feeling really blue", "I'm feeling really melancholy.", "I'm feeling really despondent", "I'm feeling really heartbroken", "I'm feeling really heavy-hearted.", "I'm feeling really dejected", "I'm feeling really crestfallen", "I'm feeling really glum.", "I'm feeling really down in the dumps", "I'm feeling really low-spirited", "I'm feeling really downcast.", "I'm feeling really dispirited.", "I am so sad", "I am not well", "I am depressed", "I am sad", "I am upset", "sad", "depressed", "upset", "hard time", "melancholy", "hopeless", "really down today", "crying", "cry", "low", "despondent", "heartbroken", "heavy-hearted", "dejected", "crestfallen", "glum", "down in the dumps", "low-spirited", "downcast", "dispirited", "dispirit", "not well"
 			],
 			"responses":["I'm sorry to hear that you're feeling down. Is there anything I can do to help?", "It's understandable to feel sad sometimes. Would you like to talk about what's been on your mind?", "It sounds like you're going through a tough time. Would you like some support or resources?", "I'm here for you. Is there something specific that's been making you feel sad?", "I understand that sadness is a part of life. Would you like some advice or just a listening ear?","It's okay to feel sad. Sometimes talking about it can help. Would you like to talk about what's been on your mind?"
 			]
 		},
 		{
 			"tag":"health",
-			"patterns": ["how are you", "how you", "are you fine?", "are you good", "what's up"
+			"patterns": ["how are you", "how you", "are you fine?", "are you good", "what's up", "health", "how are"
 			],
 			"responses":["Fine.", "Perfect.", "Cool.", "Like You.", "I'm Fine. Are you Fine?"
 			]
 		},
 		{
 			"tag":"good_health",
-			"patterns": ["fine", "Perfect.", "Cool.", "Like You.", "I am Fine.", "good", "well", "not bad", "I am good"
+			"patterns": ["fine", "fine", "perfect.", "cool.", "like You.", "i am Fine.", "good", "well", "not bad", "i am good", "i am"
 			],
-			"responses":["That's great to hear!", "I'm glad you're doing well. How can I help you today?", "Alright, is there anything you want to talk about?", "Ok, let me know if you need anything.",
-						 "Are you Fine? I'm Fine.", "I'm happy to hear that, do you need help with anything?"
+			"responses":["That's great to hear!", "I'm glad you're doing well. How can I help you today?", "Alright, is there anything you want to talk about?", "Ok, let me know if you need anything.", "Are you Fine? I'm Fine.", "I'm happy to hear that, do you need help with anything?"
 			]
 		},
 		{
 			"tag":"bad_health",
-			"patterns": ["not fine", "I am not fine", "not well", "bad", "I am suffer", "not good", "I am not well"
+			"patterns": ["not fine", "i am not fine", "not well", "bad", "i am suffer", "not good", "i am not well", "suffer", "suffering", "no good", "good not", "well not", "no well", "not", "i am"
 			],
 			"responses":["I'm sorry to hear that. Can you tell me what's been going on?", "I understand. Is there anything I can do to help?", "I'm here for you. Would you like to talk about what's been causing you to feel unwell?",
 						 "I'm sorry you're not feeling well. Is there anything you need help with?", "I'm sorry to hear that."
@@ -55,56 +52,56 @@
 		},
 		{
 			"tag":"time",
-			"patterns": ["what is the time", "time", "tell me the time", "what's the time now", "show me the time", "tell me the time"
+			"patterns": ["what is the time", "time", "tell me the time", "what's the time now", "show me the time", "tell me the time", "now", "right now", "the", "show the", "tell me", "what is the", "show me"
 			],
 			"responses":["time"
 			]
 		},
 		{
 			"tag":"date",
-			"patterns": ["what is the date", "date", "tell me the date", "what's the date today", "show me the date", "tell me the date", "today's date"
+			"patterns": ["what is the date", "date", "tell me the date", "what's the date today", "show me the date", "tell me the date", "today's date", "today", "thatday", "the", "show the", "tell me", "what is the", "show me"
 			],
 			"responses":["date"
 			]
 		},
 		{
 			"tag":"day",
-			"patterns": ["what is the day", "day", "tell me the day", "what's the day today", "show me the day", "tell me the day", "today's day"
+			"patterns": ["what is the day", "day", "tell me the day", "what's the day today", "show me the day", "tell me the day", "today's day", "What day is it", "What date is it today", "What's the date", "What's today's date", "What's the current day", "What's the day of the week", "What's the calendar day", "What's the present day", "What is today", "today", "thatday", "the", "show the", "tell me", "what is the", "show me"
 			],
 			"responses":["day"
 			]
 		},
 		{
 			"tag":"wikipedia",
-			"patterns": ["who is", "about", "what is", "wikipedia"
+			"patterns": ["who is", "about", "what is", "wikipedia", "who are", "whose", "who was", "who were", "who have been", "in regards to", "in relation to", "on the subject of", "relating to", "touching on", "what means", "what signifies", "what represents", "what signifies", "what denotes", "the free encyclopedia", "the open source encyclopedia", "the online reference", "the crowd-sourced encyclopedia", "tell me about", "how to"
 			],
 			"responses":["wikipedia"
 			]
 		},
 		{
 			"tag":"qr_code",
-			"patterns": ["create a qr code", "generate a qr code", "qr code", "make qr code"
+			"patterns": ["create a qr code", "generate a qr code", "qr code", "make qr code", "generate", "produce", "make", "design", "build", "construct", "compose", "develop", "formulate"
 			],
 			"responses":["qr_code"
 			]
 		},
 		{
 			"tag":"screenshot",
-			"patterns": ["take screenshot", "screenshot", "capture screenshot", "make qr code", "click the screenshot"
+			"patterns": ["take screenshot", "screenshot", "capture screenshot", "make qr code", "click the screenshot", "capture", "grab", "snag", "freeze frame", "preserve", "save"
 			],
 			"responses":["screenshot"
 			]
 		},
 		{
 			"tag":"internet_speed",
-			"patterns": ["check my internet speed", "check net speed", "what is my internet speed", "show my internet speed", "check the speed of my internet"
+			"patterns": ["check my internet speed", "check net speed", "what is my internet speed", "show my internet speed", "check the speed of my internet", "Test", "measure", "determine", "evaluate", "assess", "verify", "examine", "calculate", "establish", "internet", "net", "speed", "the"
 			],
 			"responses":["internet_speed"
 			]
 		},
 		{
 			"tag":"clear_browser_history",
-			"patterns": ["clear my all history from", "delete my all history from", "remove my history from", "delete history from", "clear all history from", "remove all history from"
+			"patterns": ["clear my all history from", "delete my all history from", "remove my history from", "delete history from", "clear all history from", "remove all history from", "clear", "remove", "delete", "history"
 			],
 			"responses":["clear_browser_history"
 			]
@@ -118,28 +115,28 @@
 		},
 		{
 			"tag":"file_convert",
-			"patterns": ["convert a file"
+			"patterns": ["convert a file", "Transform", "change", "transmute", "modify", "adapt", "re-format", "re-structure", "re-arrange", "alter", "re-write", "re-configure", "update", "re-style a file"
 			],
 			"responses":["file_convert"
 			]
 		},
 		{
 			"tag":"video_downloader",
-			"patterns": ["video downloader", "download a video", "download youtube video", "I want to download a video", "can you download a video for me?", "download a video from youtube", "youtube video douwnload"
+			"patterns": ["video downloader", "download a video", "download youtube video", "I want to download a video", "can you download a video for me?", "download a video from youtube", "youtube video douwnload", "film", "clip", "movie", "visual", "footage", "telecast", "broadcast", "recording", "multimedia"
 			],
 			"responses":["video_downloader"
 			]
 		},
 		{
 			"tag":"extract_audio",
-			"patterns": ["extract audio", "extract audio from a video", "download youtube video", "convert a video to audio", "video to audio", "mp4 to mp3", "make audio from a video"
+			"patterns": ["extract audio", "extract audio from a video", "convert a video to audio", "video to audio", "mp4 to mp3", "make audio from a video", "extract music", "Melody", "tune", "symphony", "piece", "song", "harmony", "composition", "strain", "ditty", "overture", "ballad", "psalm", "chanson", "minstrelsy"
 			],
 			"responses":["extract_audio"
 			]
 		},
 		{
 			"tag":"file_reader",
-			"patterns": ["read a file for me", "file read", "file reading", "read the text"
+			"patterns": ["read a file for me", "file read", "file reading", "read the text", "doc", "docx", "pdf", "text", "document", "essay"
 			],
 			"responses":["file_reader"
 			]
@@ -156,6 +153,13 @@
 			"patterns": ["zip a file", "zip a unzip file", "create a zip file", "make a zip file", "convert to zip file", "unzip tp zip"
 			],
 			"responses":["zip_file"
+			]
+		},
+		{
+			"tag":"Motion_Detect",
+			"patterns": ["start motion detection", "start motion detector", "open motion detection", "start motion detection", "start motion detector", "observe motion"
+			],
+			"responses":["Motion_Detect"
 			]
 		}
 	]
