@@ -1,3 +1,4 @@
+import time                                                 #pip install python-time
 import datetime                                             #pip install DateTime
 from Speak import Say, Just_Say
 import wikipedia                                            #pip install wikipedia
@@ -160,6 +161,7 @@ def Motion_Detect():
     alarm = False
     alarm_mode = False
     alarm_counter = 0
+    image_counter = 0
 
     def beep_alarm():
         global alarm
@@ -168,6 +170,9 @@ def Motion_Detect():
                 break
             print("MOTION DETECT")
             winsound.Beep(2500,1000)
+            image_counter = int(time.time())
+            cv2.imwrite("alarm_{}.jpg".format(image_counter), frame)
+            image_counter += 1
         alarm = False
     
     while True:
@@ -203,7 +208,7 @@ def Motion_Detect():
     
 def task():
         Say("I am an Artificial Intelligent. I have no imotions like humans! But I can perform a several works, see the below:")
-        print("\n I can tell the present Date, Time and Day,\n  I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also")
+        print("\n I can tell the present Date, Time and Day,\n  I can take screenshot,\n I can determine the internet speed,\n I can clear the all history from chrome browser,\n I can close applications,\n I can search data from wikipedia and internet,\n I can generate QR code,\n I can convert the file like, pdf to docx, docx to pdf, pdf to jpeg, docx to jpeg, pdf to txt and so on,\n I can download video from youtube,\n I can extract audio from a video,\n I can read any type of file,\n I can unlock a zip file and create a zip file also, \n I can detect any kind of motion")
     
 #All non input functions are here___________________________________________________________________________________________________________________   
     
