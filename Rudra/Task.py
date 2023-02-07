@@ -41,7 +41,7 @@ def Date():
     year = int(datetime.datetime.now().year)
     month = int(datetime.datetime.now().month)
     date = int(datetime.datetime.now().day)
-    date = (str(int(date))+"/"+str(int(month))+"/"+str(int(year)))
+    date = (str(int(month))+"/"+str(int(date))+"/"+str(int(year)))
     Say(date)
     
 def Day():
@@ -75,12 +75,15 @@ def extract_audio():
     Just_Say("Enter the video name")
     v_p = input("Enter the video name: ")
     v_p = v_p.replace(".mp4","").replace(".mp3","").replace("avi","")
-    video_path = v_p + '.mp4'
-    audio_path = v_p + '.mp3'
-    video = VideoFileClip(video_path)
-    audio = video.audio
-    audio.write_audiofile(audio_path) 
-    Say("Done")
+    try:
+        video_path = v_p + '.mp4'
+        audio_path = v_p + '.mp3'
+        video = VideoFileClip(video_path)
+        audio = video.audio
+        audio.write_audiofile(audio_path) 
+        Say("Done")
+    except:
+        Say("Be sure the video is exist or a supported format.")
     
 def file_reader():
     try:
@@ -275,7 +278,7 @@ def NonInputExecution(query):
 def InputExecution(tag,query):
     
     if "wikipedia" in tag:
-        name = str(query).replace("who is","").replace("about","").replace("what is","").replace("wikipedia","").replace("who are","").replace("whose","").replace("who was","").replace("who were","").replace("who have been","").replace("in regards to","").replace("in relation to","").replace("on the subject of","").replace("relating to","").replace("touching on","").replace("what means","").replace("what signifies","").replace("what represents","").replace("what signifies","").replace("what denotes","").replace("the free encyclopedia","").replace("the open source encyclopedia","").replace("the online reference","").replace("the crowd-sourced encyclopedia","").replace("tell me about","").replace("how to","")
+        name = str(query).replace("who","").replace("is","").replace("about","").replace("what","").replace("wikipedia","").replace("are","").replace("whose","").replace("was","").replace("were","").replace("have","").replace("has","").replace("been","").replace("in","").replace("regards","").replace("to","").replace("relation","").replace("on","").replace("the","").replace("subject","").replace("of","").replace("relating","").replace("touching","").replace("means","").replace("signifies","").replace("represents","").replace("of","").replace("relating","").replace("touching","").replace("what signifies","").replace("denotes","").replace("encyclopedia","").replace("open","").replace("source","").replace("online","").replace("reference","").replace("crowd-sourced","").replace("tell","").replace("me","").replace("how","").replace("what is","")
         Just_Say("How many lines I read?")
         l_n = input("How many lines I read: ")
         try:
