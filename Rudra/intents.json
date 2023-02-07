@@ -9,7 +9,7 @@
 		},
 		{
 			"tag":"task",
-			"patterns": ["what", "you", "can", "do", "for", "me", "what you can do for", "us", "which", "task", "you can", "perform", "what is", "your", "ability", "tell", "what you can do", "what you can perform", "task", "ability", "perform", "what you can", "what you can do", "your ability"
+			"patterns": ["you", "can", "do", "for", "me", "what you can do for", "us", "which", "task", "you can", "perform", "your", "ability", "tell", "what you can do", "what you can perform", "task", "ability", "perform", "what you can", "your ability"
 			],
 			"responses":["task"
 			]
@@ -30,14 +30,14 @@
 		},
 		{
 			"tag":"health",
-			"patterns": ["how", "are", "you", "how you", "are you fine?", "are you good", "what's up", "health", "how are", "what", "about", "you"
+			"patterns": ["how", "are", "you", "how you", "are you fine?", "are you good", "what's up", "health", "how are", "about", "you"
 			],
 			"responses":["Fine.", "Perfect.", "Cool.", "Like You.", "I'm Fine. Are you Fine?"
 			]
 		},
 		{
 			"tag":"good_health",
-			"patterns": ["fine", "fine", "perfect.", "cool.", "like You.", "i am Fine.", "good", "well", "not bad", "i am good", "i am"
+			"patterns": ["fine", "fine", "perfect.", "cool.", "like You.", "i am Fine.", "good", "well", "not bad", "i am good", "i am","all well", "thanks"
 			],
 			"responses":["That's great to hear!", "I'm glad you're doing well. How can I help you today?", "Alright, is there anything you want to talk about?", "Ok, let me know if you need anything.", "Are you Fine? I'm Fine.", "I'm happy to hear that, do you need help with anything?"
 			]
@@ -52,28 +52,28 @@
 		},
 		{
 			"tag":"time",
-			"patterns": ["what", "is", "the", "time", "tell", "me", "what's", "show", "tell me the time", "now", "right now", "the", "show the", "tell me", "what is the", "show me", "exact", "recent"
+			"patterns": ["what time is it now", "what's the time now", "what is the time now", "current time", "tell me the time", "time now"
 			],
 			"responses":["time"
 			]
 		},
 		{
 			"tag":"date",
-			"patterns": ["what", "is", "the", "date", "tell", "me", "the", "date", "what's", "today", "show", "tell me the date", "today's", "thatday"
+			"patterns": ["what date is it today", "what's the date today", "what is the date today", "today's date", "tell me the date", "date today"
 			],
 			"responses":["date"
 			]
 		},
 		{
 			"tag":"day",
-			"patterns": ["what", "is", "the", "day", "tell", "me", "what's", "today", "show", "tell me the day", "today's day", "What day", "is", "it", "What date is it today", "What's the date", "What's today's date", "What's the", "current", "day", "What's the day", "of", "the", "week", "What's the", "calendar", "present", "What is today", "today", "thatday", "the", "show the", "tell me", "what is the", "show me"
+			"patterns": ["what day is it today", "what's the day today", "what is the day today", "today's day", "tell me the day", "day today"
 			],
 			"responses":["day"
 			]
 		},
 		{
 			"tag":"wikipedia",
-			"patterns": ["who", "is", "about", "what", "wikipedia", "are", "whose", "was", "were", "have", "has", "been", "in", "regards", "to", "relation", "on", "the", "subject", "of", "relating", "touching", "means", "signifies", "represents", "what signifies", "denotes", "free", "encyclopedia", "open", "source", "online", "reference", "crowd-sourced", "tell", "me", "how"
+			"patterns": ["what is", "who", "is", "is", "about", "about", "what", "what", "wikipedia", "are", "whose", "was", "were", "have", "has", "been", "in", "regards", "to", "relation", "on", "the", "subject", "of", "relating", "touching", "means", "signifies", "represents", "what signifies", "denotes", "encyclopedia", "open", "source", "online", "reference", "crowd-sourced", "tell", "me", "how"
 			],
 			"responses":["wikipedia"
 			]
@@ -87,14 +87,14 @@
 		},
 		{
 			"tag":"screenshot",
-			"patterns": ["take", "take screenshot", "screenshot", "capture screenshot", "make qr code", "click", "the", "capture", "grab", "snag", "freeze frame", "preserve", "save"
+			"patterns": ["take a screenshot", "capture screenshot", "screenshot please", "can you take a screenshot", "make a screenshot"
 			],
 			"responses":["screenshot"
 			]
 		},
 		{
 			"tag":"internet_speed",
-			"patterns": ["check", "my", "internet", "speed", "what", "is", "internet speed", "show", "the", "of", "Test", "measure", "determine", "evaluate", "assess", "verify", "examine", "calculate", "establish", "net"
+			"patterns": ["check", "my", "internet", "speed", "is", "internet speed", "show", "the", "of", "Test", "measure", "determine", "evaluate", "assess", "verify", "examine", "calculate", "establish", "net"
 			],
 			"responses":["internet_speed"
 			]

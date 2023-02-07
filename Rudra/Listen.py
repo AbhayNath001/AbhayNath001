@@ -1,4 +1,4 @@
-import speech_recognition as sr         #pip install SpeechRecognition
+import speech_recognition as sr
 
 def Listen():
     r = sr.Recognizer()
@@ -16,9 +16,10 @@ def Listen():
     except Exception as e:
         print(e)
         return "None"
-    query = str(query)    
-    return query.lower()
     
-def Text():
-    query = input("input: ")
-    print(f"You said: {query}")
+    # query = str(query)
+    
+    # with open("user_asking.txt", "a") as f:
+        # f.write(">> " + query + "\n")
+    
+    return query.lower()
