@@ -24,7 +24,7 @@ model.eval()
 
 name = "Rudra"
 
-from Listen import Listen, Text
+from Listen import Listen
 from Speak import Say
 from Task import NonInputExecution
 from Task import InputExecution
