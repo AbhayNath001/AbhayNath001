@@ -1,6 +1,6 @@
 import random                                                               #pip install random2
 import json
-import torch                                                                #pip install torch
+import torch                                                                #pip install pytorch
 from brain import NeuralNet
 from NeuralNetwork import bag_of_words, tokenize
 import datetime                                                             #pip install DateTime
@@ -52,7 +52,7 @@ def Main():
     tag = tags[predicted.item()]
     probs = torch.softmax(output,dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.95:
+    if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 reply = random.choice(intent["responses"])

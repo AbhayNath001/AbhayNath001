@@ -4,12 +4,12 @@
 			"tag":"greeting",
 			"patterns": ["hello", "hii", "hai", "hi", "hey", "wake", "up", "rudra", "namashkar", "Good morning", "good afternoon", "good evening", "morning", "afternoon", "evening"
 			],
-			"responses":["Hello", "How Are You.", "I am always For You", "yes, I am here", "Namashkar", "Here's Your Assistant."
+			"responses":["Hello", "How Are You.", "I am always For You", "yes, I am here", "Namashkar"
 			]
 		},
 		{
 			"tag":"task",
-			"patterns": ["you", "can", "do", "for", "me", "what you can do for", "us", "which", "task", "you can", "perform", "your", "ability", "tell", "what you can do", "what you can perform", "task", "ability", "perform", "what you can", "your ability"
+			"patterns": ["what tasks can you perform", "what can you do", "your capabilities", "list your functions", "what services do you offer"
 			],
 			"responses":["task"
 			]
@@ -23,28 +23,28 @@
 		},
 		{
 			"tag":"sad",
-			"patterns":["i'm", "feeling", "really down today.", "i am", "so sad", "I don't know what to do", "having", "a", "hard", "time", "i", "feel", "like", "crying", "i'm feeling", "really", "low", "i am so depressed", "I'm feeling really hopeless", "i am feeling really", "blue", "I'm feeling really melancholy.", "I'm feeling really despondent", "I'm feeling really heartbroken", "I'm feeling really heavy-hearted.", "I'm feeling really dejected", "I'm feeling really crestfallen", "I'm feeling really glum.", "I'm feeling really down in the dumps", "I'm feeling really low-spirited", "I'm feeling really downcast.", "I'm feeling really dispirited.", "I am so sad", "I am not well", "I am depressed", "I am sad", "I am upset", "sad", "depressed", "upset", "hard time", "melancholy", "hopeless", "really down today", "crying", "cry", "low", "despondent", "heartbroken", "heavy-hearted", "dejected", "crestfallen", "glum", "down in the dumps", "low-spirited", "downcast", "dispirited", "dispirit", "not well"
+			"patterns":["I feel sad", "I'm feeling down", "I'm sad", "I'm feeling low", "I'm feeling blue", "I'm not happy"
 			],
 			"responses":["I'm sorry to hear that you're feeling down. Is there anything I can do to help?", "It's understandable to feel sad sometimes. Would you like to talk about what's been on your mind?", "It sounds like you're going through a tough time. Would you like some support or resources?", "I'm here for you. Is there something specific that's been making you feel sad?", "I understand that sadness is a part of life. Would you like some advice or just a listening ear?","It's okay to feel sad. Sometimes talking about it can help. Would you like to talk about what's been on your mind?"
 			]
 		},
 		{
 			"tag":"health",
-			"patterns": ["how", "are", "you", "how you", "are you fine?", "are you good", "what's up", "health", "how are", "about", "you"
+			"patterns": ["How are you feeling?", "Are you okay?", "How's your health?", "How do you feel?"
 			],
 			"responses":["Fine.", "Perfect.", "Cool.", "Like You.", "I'm Fine. Are you Fine?"
 			]
 		},
 		{
 			"tag":"good_health",
-			"patterns": ["fine", "fine", "perfect.", "cool.", "like You.", "i am Fine.", "good", "well", "not bad", "i am good", "i am","all well", "thanks"
+			"patterns": ["I'm feeling good.", "I'm doing well.", "I'm fine.", "I'm in good health.", "I'm good, thanks for asking."
 			],
 			"responses":["That's great to hear!", "I'm glad you're doing well. How can I help you today?", "Alright, is there anything you want to talk about?", "Ok, let me know if you need anything.", "Are you Fine? I'm Fine.", "I'm happy to hear that, do you need help with anything?"
 			]
 		},
 		{
 			"tag":"bad_health",
-			"patterns": ["not fine", "i am not fine", "not well", "bad", "i am suffer", "not good", "i am not well", "suffer", "suffering", "no good", "good not", "well not", "no well", "not", "i am", "fine", "good", "no"
+			"patterns": ["not feeling well", "feeling sick", "unwell", "health is not good", "health issues", "feeling bad", "not well", "ill health", "under the weather"
 			],
 			"responses":["I'm sorry to hear that. Can you tell me what's been going on?", "I understand. Is there anything I can do to help?", "I'm here for you. Would you like to talk about what's been causing you to feel unwell?",
 						 "I'm sorry you're not feeling well. Is there anything you need help with?", "I'm sorry to hear that."
@@ -94,14 +94,14 @@
 		},
 		{
 			"tag":"internet_speed",
-			"patterns": ["check", "my", "internet", "speed", "is", "internet speed", "show", "the", "of", "Test", "measure", "determine", "evaluate", "assess", "verify", "examine", "calculate", "establish", "net"
+			"patterns": ["what's my internet speed", "internet speed test", "check internet speed", "measure internet speed", "what's the internet speed"
 			],
 			"responses":["internet_speed"
 			]
 		},
 		{
 			"tag":"clear_browser_history",
-			"patterns": ["my", "all", "from", "delete my all history from", "remove", "delete history from", "clear all history from", "remove all history from", "clear", "remove", "delete", "history"
+			"patterns": ["clear my browser history", "delete browser history", "erase browser history", "remove browser history", "clean browser history"
 			],
 			"responses":["clear_browser_history"
 			]
@@ -115,21 +115,21 @@
 		},
 		{
 			"tag":"file_convert",
-			"patterns": ["convert", "a", "file", "Transform", "change", "transmute", "modify", "adapt", "re-format", "re-structure", "re-arrange", "alter", "re-write", "re-configure", "update", "re-style"
+			"patterns": ["convert a file", "change file format", "convert file type", "file conversion", "convert file extension"
 			],
 			"responses":["file_convert"
 			]
 		},
 		{
 			"tag":"video_downloader",
-			"patterns": ["video", "downloader", "download", "a", "youtube", "i", "want", "to", "can", "you", "for", "me?", "from", "film", "clip", "movie", "visual", "footage", "telecast", "broadcast", "recording", "multimedia", "mp4"
+			"patterns": ["download a youtube video", "get youtube video", "youtube video download", "save youtube video", "download youtube video to my device"
 			],
 			"responses":["video_downloader"
 			]
 		},
 		{
 			"tag":"extract_audio",
-			"patterns": ["extract", "audio", "from", "a", "video", "convert", "to", "video to audio", "mp4 to mp3", "make", "music", "Melody", "tune", "symphony", "piece", "song", "harmony", "composition", "strain", "ditty", "overture", "ballad", "psalm", "chanson", "minstrelsy", "mp3"
+			"patterns": ["extract audio from video", "separate audio from video", "audio extraction", "get audio from video", "remove audio from video", "convert mp4 to mp3"
 			],
 			"responses":["extract_audio"
 			]

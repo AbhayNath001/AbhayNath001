@@ -1,4 +1,4 @@
-import speech_recognition as sr
+import speech_recognition as sr                             #pip install SpeechRecognition
 
 def Listen():
     r = sr.Recognizer()
