@@ -20,9 +20,10 @@ import docx                                                 #pip install docx
 import pdfreader                                            #pip install pdfreader
 import zipfile                                              #pip install zip-files
 import cv2                                                  #pip install opencv-python imutils
-import imutils
+import imutils                                              #pip install imutils
 import threading
 import winsound
+import numpy as np
 
 def Time():
     hours = datetime.datetime.now().strftime("%H")
@@ -256,17 +257,15 @@ def NonInputExecution(query):
             pyautogui.write("chrome")
             pyautogui.press('enter')
             pyautogui.sleep(5)
-            pyautogui.press('tab')
-            pyautogui.press('enter')
-            pyautogui.hotkey('ctrl','h')
+            pyautogui.hotkey('tab', 'enter')
             pyautogui.sleep(1)
-            pyautogui.press('tab')
-            pyautogui.hotkey('ctrl','a')
+            pyautogui.hotkey('ctrl', 'h')
+            pyautogui.sleep(1)
+            pyautogui.hotkey('tab', 'ctrl', 'a')
             pyautogui.sleep(1)
             pyautogui.press('delete')
             pyautogui.sleep(1)
-            pyautogui.press('enter')
-            pyautogui.hotkey('alt','f4')
+            pyautogui.hotkey('enter', 'alt', 'f4')
             Say("Removed all history")
             
     # elif 'close' in query:
