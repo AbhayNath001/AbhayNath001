@@ -31,27 +31,5 @@ def run_camera():
 
 camera_thread = threading.Thread(target=run_camera)
 camera_thread.start()
-
-# Perform other tasks here while the camera thread is running in the background
-
-def Time():
-    hours = datetime.datetime.now().strftime("%H")
-    minutes = datetime.datetime.now().strftime(":%M %p")
-    hours = int(hours)
-    if hours > 12:
-        hours = hours-12
-        time = str(hours) + minutes
-        Say(time)
-        
-    else:
-        time = str(hours) + minutes
-        Say(time)
-while True:     
-    query = input(">> ")        
-        
-if "time" in query:
-    Time()
-        
-# When the other tasks are finished, stop the camera thread
 camera_thread.join()
 cv2.destroyAllWindows()
