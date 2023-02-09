@@ -95,6 +95,9 @@ def Main():
                 elif "qr_code" in reply:
                     InputExecution(reply,sentence)
                     
+                elif "youtube_search" in reply:
+                    InputExecution(reply,sentence)
+                    
                 elif "file_convert" in reply:
                     InputExecution(reply,sentence)
                     

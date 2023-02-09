@@ -23,7 +23,6 @@ import cv2                                                  #pip install opencv-
 import imutils                                              #pip install imutils
 import threading
 import winsound
-import numpy as np
 
 def Time():
     hours = datetime.datetime.now().strftime("%H")
@@ -305,7 +304,41 @@ def InputExecution(tag,query):
             Just_Say("enter the name of your QR code")
             qr_name = input("enter the name of your QR code: ")    
             img.save(qr_name + ".png")
-            Say("Done")  
+            Say("Done") 
+
+    elif "youtube_search" in tag:
+        query = str(query).replace("search","").replace("youtube","").replace("on","").replace("play","").replace("play a","").replace("the","").replace("music","").replace("video","")
+        webbrowser.open("https://www.youtube.com/")
+        try:
+            pyautogui.sleep(3)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.1)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.1)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.1)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.1)
+            pyautogui.write(query)
+            pyautogui.press('enter')
+            pyautogui.sleep(0.3)
+            pyautogui.press('tab')
+            pyautogui.press('enter')
+        except:
+            pyautogui.sleep(5)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.5)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.5)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.5)
+            pyautogui.press('tab')
+            pyautogui.sleep(0.3)
+            pyautogui.write(query)
+            pyautogui.press('enter')
+            pyautogui.sleep(0.3)
+            pyautogui.press('tab')
+            pyautogui.press('enter')
 
     elif "file_convert" in tag:
             Say("which type of convertion")

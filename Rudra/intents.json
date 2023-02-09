@@ -161,6 +161,13 @@
 			],
 			"responses":["Motion_Detect"
 			]
+		},
+		{
+			"tag":"youtube_search",
+			"patterns": ["youtube", "search a video on youtube", "search on youtube"
+			],
+			"responses":["youtube_search"
+			]
 		}
 	]
 }
