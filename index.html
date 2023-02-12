@@ -61,34 +61,55 @@ Your browser does not support the video tag.
       </section>
       <section id="contact">
         <h2>Contact Us</h2>
-        <form action="database.php" method="post">
-		  <label for="id">ID:</label>
-          <input type="number" id="id" name="id"><br>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name"><br>
+        <form action="first.html" method="post" onsubmit="storeData()">
+		
+          <label for="name"><font size="5" color="red">*</font>Username:</label>
+          <input type="text" placeholder="user" id="name" name="name"><br>
+		  
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email"><br>
+          <input type="email" placeholder="example123@gmail.com" id="email" name="email"><br>
+		  
     <!--  <label for="message">Message:</label>
 		  <textarea id="message" name="message"></textarea>     -->
+		  
 		  <label for="password">Password:</label>
-          <input type="password" id="password" name="password"><br>
+          <input type="password" placeholder="• • • • • • • •" id="id_password" name="password">
+		  <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br>
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		  <script>
+		  const togglePassword = document.querySelector('#togglePassword');
+		  const password = document.querySelector('#id_password');
+		  togglePassword.addEventListener('click', function (e) {
+		  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		  password.setAttribute('type', type);
+		  this.classList.toggle('fa-eye-slash');
+		  });
+		  </script>
+		  
           <label for="contact">Contact:</label>
-          <input type="tel" id="contact" name="contact"><br>
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address"><br>
+          <input type="tel" placeholder="+91 0123456789" id="contact" name="contact"><br>
+		  
+          <label for="country">Country:</label>
+          <input type="text" placeholder="choose your country" id="country" name="country"><br>
+		  
 		  <label for="dob">DOB:</label>
-          <input type="date" id="dob" name="dob" max="2030-31-12"><br>
+          <input type="date" id="dob" name="dob" min="1945-01-01" max="2023-12-31"><br>
+		  
           <label for="gender">Gender:</label>
-          <input type="radio" id="gender" name="gender" value="M">
-		  <input type="radio" id="gender" name="gender" value="F">
-		  <input type="radio" id="gender" name="gender" value="O"><br>
-          <label for="status">Status:</label>
-          <input type="number" id="status" name="status"><br>
+          <input type="radio" id="gender_m" name="gender" value="M">
+		  <label for="gender_m">Male</label>
+		  <input type="radio" id="gender_f" name="gender" value="F">
+		  <label for="gender_f">Female</label>
+		  <input type="radio" id="gende_o" name="gender" value="O">
+		  <label for="gender_o">Others</label><br>
 <br>
 <input type="submit" value="Send">
  </form>
 </section>
 </main>
+
+<div id="display-rating"></div>
+
 <footer>
 <p>Copyright © 2023 Abhay Nath</p>
 </footer>

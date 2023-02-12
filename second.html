@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+
+<script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        let formData = {};
+        formData['name'] = document.querySelector('input[name="name"]').value;
+        formData['email'] = document.querySelector('input[name="email"]').value;
+        formData['password'] = document.querySelector('input[name="password"]').value;
+        formData['contact'] = document.querySelector('input[name="contact"]').value;
+        formData['country'] = document.querySelector('input[name="country"]').value;
+        formData['dob'] = document.querySelector('input[name="dob"]').value;
+        formData['gender'] = document.querySelector('input[name="gender"]:checked').value;
+        localStorage.setItem("formData", JSON.stringify(formData));
+
+        // Retrieve
+        let storedData = JSON.parse(localStorage.getItem("formData"));
+        document.getElementById("result").innerHTML = 
+            "Username: " + storedData.name + "<br>" +
+            "Email: " + storedData.email + "<br>" +
+            "Password: " + storedData.password + "<br>" +
+            "Contact: " + storedData.contact + "<br>" +
+            "Country: " + storedData.country + "<br>" +
+            "DOB: " + storedData.dob + "<br>" +
+            "Gender: " + storedData.gender;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage.";
+    }
+</script>
+
+</body>
+</html>

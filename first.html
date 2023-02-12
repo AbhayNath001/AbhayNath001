@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<script>
+    function storeData() {
+        // Check browser support
+        if (typeof(Storage) !== "undefined") {
+            // Get the form data
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("id_password").value;
+            var contact = document.getElementById("contact").value;
+            var country = document.getElementById("country").value;
+            var dob = document.getElementById("dob").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+
+            // Store the form data
+            localStorage.setItem("Name", name);
+            localStorage.setItem("Email", email);
+            localStorage.setItem("Password", password);
+            localStorage.setItem("Contact", contact);
+            localStorage.setItem("Country", country);
+            localStorage.setItem("DOB", dob);
+            localStorage.setItem("Gender", gender);
+        }
+    }
+</script>
+ 
+</body>
+</html>

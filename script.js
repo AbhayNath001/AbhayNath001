@@ -17,9 +17,15 @@ stars.forEach(function(star) {
   });
 });
 
-function sendRatingToServer(rating) {
-  // Use an HTTP request to send the rating value to the server
-  // for example: fetch("/rating", { method: "POST", body: rating });
-  // You can use any library or method to send the data to the server.
-  console.log("rating sent to server:", rating);
-}
+// Hide and Show the password
+
+const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
