@@ -15,7 +15,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Feedback</a></li>
         </ul>
       </nav>
     </header>
@@ -60,17 +60,14 @@ Your browser does not support the video tag.
         </ul>
       </section>
       <section id="contact">
-        <h2>Contact Us</h2>
+        <h2>Feedback</h2>
         <form action="first.html" method="post" onsubmit="storeData()">
 		
-          <label for="name"><font size="5" color="red">*</font>Username:</label>
-          <input type="text" placeholder="user" id="name" name="name"><br>
+          <label for="name">Username:</label>
+          <input type="text" placeholder="username" id="name" name="name"><br>
 		  
           <label for="email">Email:</label>
           <input type="email" placeholder="example123@gmail.com" id="email" name="email"><br>
-		  
-    <!--  <label for="message">Message:</label>
-		  <textarea id="message" name="message"></textarea>     -->
 		  
 		  <label for="password">Password:</label>
           <input type="password" placeholder="• • • • • • • •" id="id_password" name="password">
@@ -101,7 +98,12 @@ Your browser does not support the video tag.
 		  <input type="radio" id="gender_f" name="gender" value="F">
 		  <label for="gender_f">Female</label>
 		  <input type="radio" id="gende_o" name="gender" value="O">
-		  <label for="gender_o">Others</label><br>
+		  <label for="gender_o">Others</label>
+		  <input type="radio" id="gende_r" name="gender" value="R">
+		  <label for="gender_o">Rather not say</label><br>
+		  
+		  <label for="message"></label>
+		  <textarea placeholder="Feedback" id="message" name="message"></textarea>
 <br>
 <input type="submit" value="Send">
  </form>
@@ -111,8 +113,29 @@ Your browser does not support the video tag.
 <div id="display-rating"></div>
 
 <footer>
-<p>Copyright © 2023 Abhay Nath</p>
+<p>Copyright © 2023 Abhay Nath</p><br>
+<p>contact<br><p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=contactabhaynath%40gmail.com&su=Subject%20Here&body=Type%20Your%20Message%20Here" style="color: #FF9933;">contactabhaynath@gmail.com</a></p></p>
 </footer>
 <script src="script.js"></script>
+
+<style>
+      body {
+        background-image: linear-gradient(to right, #FF4136, #0074D9, #2ECC40, #FFDC00, #FF851B);
+        background-size: 200% 200%;
+        animation: gradient 15s ease infinite;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+
 </body>
 </html>
