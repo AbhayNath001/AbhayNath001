@@ -9,7 +9,7 @@
 		},
 		{
 			"tag":"task",
-			"patterns": ["what tasks can you perform", "what can you do", "your capabilities", "list your functions", "what services do you offer"
+			"patterns": ["tasks can you perform", "what can you do", "your capabilities", "list your functions", "what services do you offer"
 			],
 			"responses":["task"
 			]
@@ -167,6 +167,13 @@
 			"patterns": ["youtube", "search a video on youtube", "search on youtube"
 			],
 			"responses":["youtube_search"
+			]
+		},
+		{
+			"tag":"asteroid_count",
+			"patterns": ["astroids", "astroid", "asteroid", "asteroids"
+			],
+			"responses":["asteroid_count"
 			]
 		}
 	]

@@ -3,23 +3,23 @@ import sqlite3                                  #pip install db-sqlite3
 
 try:
     db = sqlite3.connect('College.sqlite')
-    data = pd.DataFrame([["CSPIT", "CIVIL ENGINEERING (BTECH)", 60, 128000, "4 years"],
-                         ["CSPIT", "COMPUTER ENGINEERING (BTECH)", 120, 128000, "4 years"],
-                         ["CSPIT", "COMPUTER SCIENCE AND ENGINEERING (BTECH)", 60, 128000, "4 years"],
-                         ["CSPIT", "ELECTRICAL ENGINEERING (BTECH)", 30, 128000, "4 years"],
-                         ["CSPIT", "ELECTRONICS AND COMMUNICATION ENGINEERING (BTECH)", 90, 128000, "4 years"],
-                         ["CSPIT", "INFORMATION TECHNOLOGY (BTECH)", 120, 128000, "4 years"],
-                         ["CSPIT", "MECHNICAL ENGINEERING (BTECH)", 60, 128000, "4 years"],
-                         ["CSPIT", "AI AND ML (BTECH)", 60, 128000, "4 years"],
-                         ["CSPIT", "ADVANCED MANUFACTURING TECHNOLOGY (MTECH)", 18, 159000, "2 years"],
-                         ["CSPIT", "COMPUTER ENGINEERING (MTECH)", 18, 159000, "2 years"],
-                         ["CSPIT", "STRUCTURAL ENGINEERING (MTECH)", 18, 159000, "2 years"],
-                         ["CSPIT", "THERMAL ENGINEERING (MTECH)", 18, 159000, "2 years"],
-                         ["CSPIT", "CYBER SECURITY (POST GRADUATE DIPLOMA)", 15, 150000, ""],
-                         ["DEPSTAR", "COMPUTER ENGINEERING (BTECH)", 120, 98000, "4 years"],
-                         ["DEPSTAR", "COMPUTER SCIENCE AND ENGINEERING (BTECH)", 120, 98000, "4 years"],
-                         ["DEPSTAR", "INFORMATION TECHNOLOGY (BTECH)", 120, 98000, "4 years"]],
-                         columns = ["College","Department", "Intake", "Fees", "Duration"])
+    data = pd.DataFrame([["CSPIT", "BTECH","CIVIL ENGINEERING", 60, 128000, "4 years"],
+                         ["CSPIT", "BTECH","COMPUTER ENGINEERING", 120, 128000, "4 years"],
+                         ["CSPIT", "BTECH","COMPUTER SCIENCE AND ENGINEERING", 60, 128000, "4 years"],
+                         ["CSPIT", "BTECH","ELECTRICAL ENGINEERING", 30, 128000, "4 years"],
+                         ["CSPIT", "BTECH","ELECTRONICS AND COMMUNICATION ENGINEERING", 90, 128000, "4 years"],
+                         ["CSPIT", "BTECH","INFORMATION TECHNOLOGY", 120, 128000, "4 years"],
+                         ["CSPIT", "BTECH","MECHNICAL ENGINEERING", 60, 128000, "4 years"],
+                         ["CSPIT", "BTECH","AI AND ML", 60, 128000, "4 years"],
+                         ["CSPIT", "MTECH","ADVANCED MANUFACTURING TECHNOLOGY", 18, 159000, "2 years"],
+                         ["CSPIT", "MTECH","COMPUTER ENGINEERING", 18, 159000, "2 years"],
+                         ["CSPIT", "MTECH","STRUCTURAL ENGINEERING", 18, 159000, "2 years"],
+                         ["CSPIT", "MTECH","THERMAL ENGINEERING", 18, 159000, "2 years"],
+                         ["CSPIT", "POST GRADUATE DIPLOMA","CYBER SECURITY", 15, 150000, ""],
+                         ["DEPSTAR", "BTECH","COMPUTER ENGINEERING", 120, 98000, "4 years"],
+                         ["DEPSTAR", "BTECH","COMPUTER SCIENCE AND ENGINEERING", 120, 98000, "4 years"],
+                         ["DEPSTAR", "BTECH","INFORMATION TECHNOLOGY", 160, 98000, "4 years"]],
+                         columns = ["College", "Degree","Department", "Intake", "Fees", "Duration"])
     data.to_sql("College", db, if_exists='replace')
     try:
         db1 = sqlite3.connect('University.sqlite')
@@ -64,20 +64,21 @@ except:
 def College_information():
     college = input("Enter the College Name: ")
     department = input("Enter the Department: ")
+    degree = input("Enter the degree: ")
     
-    fees = db.execute("SELECT Fees FROM College WHERE College=? AND Department=?",(college, department))
+    fees = db.execute("SELECT Fees FROM College WHERE College=? AND Department=? AND Degree=?",(college, department, degree))
     fees_result = fees.fetchone()
     
-    intake = db.execute("SELECT Intake FROM College WHERE College=? AND Department=?",(college, department))
+    intake = db.execute("SELECT Intake FROM College WHERE College=? AND Department=? AND Degree=?",(college, department, degree))
     intake_result = intake.fetchone()
     
-    duration = db.execute("SELECT Duration FROM College WHERE College=? AND Department=?",(college, department))
+    duration = db.execute("SELECT Duration FROM College WHERE College=? AND Department=? AND Degree=?",(college, department, degree))
     duration_result = duration.fetchone()
     
     if fees_result:
-        print("Fees for the {} College and {} Department is: {}".format(college, department, fees_result[0]) + " Rs")
-        print("Intake for the {} College and {} Department is: {}".format(college, department, intake_result[0]))
-        print("Course Duration for the {} College and {} Department is: {}".format(college, department, duration_result[0]))
+        print("Fees for the {} College and {} Department with {} Degree is: {}".format(college, department, degree, fees_result[0]) + " Rs")
+        print("Intake for the {} College and {} Department with {} Degree is: {}".format(college, department, degree, intake_result[0]))
+        print("Course Duration for the {} College and {} Department with {} Degree is: {}".format(college, department, degree, duration_result[0]))
         
     else:
         print("No data found for the given College and Department")

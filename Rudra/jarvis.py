@@ -117,7 +117,10 @@ def Main():
                     InputExecution(reply,sentence)  
 
                 elif "Motion_Detect" in reply:
-                    InputExecution(reply,sentence) 
+                    InputExecution(reply,sentence)
+
+                elif "asteroid_count" in reply:
+                    InputExecution(reply,sentence)
                 
                 else:    
                     Say(reply) 

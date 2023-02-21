@@ -14,6 +14,7 @@ import PyPDF2                                               #pip install PyPDF2
 from pdf2image import convert_from_path                     #pip3 install pdf2image #choco install poppler
 from docx2pdf import convert                                #pip install docx2pdf
 import urllib.request                                       #pip install urllib3
+import requests                                             #pip install requests
 from pytube import YouTube                                  #pip install pytube
 from moviepy.video.io.VideoFileClip import VideoFileClip    #pip install moviepy
 import docx                                                 #pip install docx
@@ -419,4 +420,32 @@ def InputExecution(tag,query):
         Motion_Detect()
         
     elif "task" in tag:
-        task() 
+        task()
+
+    elif "asteroid_count" in tag:
+        Api_Key = "dFVeOEqeeJijlEJWyRUks6emx10P5JZfwKMiv7jU"
+        Just_Say("Be sure that the starting and ending date range must be under the 7 days")
+        start_date = input("Enter the starting date [yyyy-mm-dd]: ")
+        end_date = input("Enter the ending date [yyyy-mm-dd]: ")
+        try:
+            print("Collecting Data...")
+            url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={Api_Key}"
+            r = requests.get(url)
+            Data = r.json()
+            Total_Astro = Data['element_count']
+            neo = Data['near_earth_objects']
+            print(f"\nTotal Astroids between from {start_date} to {end_date} is: {Total_Astro}")
+            Just_Say(f"Found total of {Total_Astro} Astroids")
+            magnitudes = []
+            for body in neo[start_date]:
+                name = body['name']
+                absolute = body['absolute_magnitude_h']
+                magnitudes.append(absolute)
+                print(f"\nName: {name} \n\tAbsolute Magnitude: {absolute}")
+            if magnitudes:
+                max_magnitude = max(magnitudes)
+                min_magnitude = min(magnitudes)
+                Say(f"\nThe brightest Astroid was {min_magnitude} absolute magnitude")
+                Say(f"The most dimmed Astroid was {max_magnitude} absolute magnitude")
+        except:
+            Say("Be sure the difference between starting date and ending date is not more than 7 days.")
