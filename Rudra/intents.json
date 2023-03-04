@@ -175,6 +175,27 @@
 			],
 			"responses":["asteroid_count"
 			]
+		},
+		{
+			"tag":"stock",
+			"patterns": ["stock", "stock report", "stock exchange", "stock value"
+			],
+			"responses":["stock"
+			]
+		},
+		{
+			"tag":"bitcoin",
+			"patterns": ["bitcoin", "bitcoin price", "bitcoin value", "price of bitcoin"
+			],
+			"responses":["bitcoin"
+			]
+		},
+		{
+			"tag":"universe_news",
+			"patterns": ["universe news", "news universe", "universe"
+			],
+			"responses":["universe_news"
+			]
 		}
 	]
 }

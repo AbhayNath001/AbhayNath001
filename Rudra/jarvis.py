@@ -28,6 +28,8 @@ from Listen import Listen
 from Speak import Say
 from Task import NonInputExecution
 from Task import InputExecution
+from Task import ApiExecution
+from Task import StockExecution
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -120,7 +122,16 @@ def Main():
                     InputExecution(reply,sentence)
 
                 elif "asteroid_count" in reply:
-                    InputExecution(reply,sentence)
+                    ApiExecution(reply,sentence)
+                    
+                elif "stock" in reply:
+                    StockExecution(reply,sentence)
+                    
+                elif "bitcoin" in reply:
+                    StockExecution(reply,sentence)
+                    
+                elif "universe_news" in reply:
+                    ApiExecution(reply,sentence)
                 
                 else:    
                     Say(reply) 
