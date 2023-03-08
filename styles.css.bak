@@ -62,7 +62,7 @@
 	display: flax;
 	justify-content: center;
 	flex-direction: column;
-	margin-left: 60px;
+	margin-left: 50px;
 }
 
 .hello {

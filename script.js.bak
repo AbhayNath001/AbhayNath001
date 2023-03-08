@@ -9,6 +9,6 @@ document.querySelector('.menubar').addEventListener("click", ()=>{
 		document.querySelector('.ham').style.display = 'none'
 		setTimeout(() => {
 			document.querySelector('.cross').style.display = 'inline'
-		}, 50);
+		}, 100);
 	}
 })
