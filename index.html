@@ -272,29 +272,14 @@
                                     btn2">Download Resume</a>
                             </div>
                             <div class="contact-right">
-							<form id="myForm" onsubmit="handleFormSubmit(this)">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="name">Name</label>
+							<form name="submit-to-google-sheet">
+								<label>Feedback</label>
                                 <input type="text" name="Name" placeholder="Your Name" required>
-                            </div>
-                          </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <input type="text" class="form-control" id="message" name="message" placeholder="Your Message">
-                        </div>
-
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <div id="output"></div>
-                                <span id="msg"></span>
-                            </div>
+								<input type="email" name="Email" placeholder="Your Email" required>
+								<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+								<button type="submit" class="btn btn2">Submit</button>
+							</form>
+							<span id="msg"></span>
                         </div>
                     </div>
                 </div>
@@ -320,24 +305,23 @@
                 </script>
                 <!-------------- Github Script ----------------->
                 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxz51tvTHvrrKgdq_DzT8P1BAGKRzN_3Wn5ECW2zEoXURPlIe4we_d-9L31fW5W1mrEvg/exec'
-                    const form = document.forms['processForm']
-                  
-                    const msg = document.getElementById("msg")
-
-                    form.addEventListener('submit', e => {
-                      e.preventDefault()
-                      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                        .then(response => { 
-                        msg.innerHTML = "Message Sent Successfully"
-                        setTimeout(function(){
-                            msg.innerHTML = " "
-                        },5000)
-                        form.reset()
-                    })
-                        .catch(error => console.error('Error!', error.message))
-                    })
-</script>
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbwDNXh8P0iTCloyUhjFtfmALt6e2fwtO8BBVD63TtUra6FLktzg8GF3oot58G4DfRfr/exec'
+					const form = document.forms['submit-to-google-sheet']
+					const msg = document.getElementById("msg")
+					form.addEventListener('submit', e => {
+					msg.innerHTML = "Successfully Submitted"
+					e.preventDefault()
+					fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+					.then(response => {
+					
+					form.reset()
+					setTimeout(function(){
+					msg.innerHTML = ""
+					},100)
+					})
+					.catch(error => console.error('Error!', error.message))
+					})
+				</script>
 
                 <!-------------- Top of the Button Moving  -->
 

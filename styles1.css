@@ -400,6 +400,8 @@ p {
   margin-top: 200px;
   margin-right: 150px;
   flex-basis: 40%;
+  font-size: 26px;
+  font-family: "Poppins";
 }
 .contact-left p {
   margin-top: 30px;
@@ -609,4 +611,9 @@ nav .fas {
     color: white;
     padding-top: 310px;
   }
+}
+#msg {
+	color: #61b752;
+	margin-top: 0px;
+	display: block;
 }
