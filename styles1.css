@@ -25,9 +25,9 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  /* background-image: url("background_my.png"); */
+  background-image: url("background1.png");
   /*Due to background color of an image, we cannot change the backgound color  */
-  background-size: cover;
+  background-size: 145%;
   background-position: center;
 }
 .container {
@@ -82,11 +82,11 @@ nav ul li a:hover::after {
   font-size: 30px;
 }
 .header-text h1 {
-  font-size: 60px;
+  font-size: 50px;
   margin-top: 0px;
 }
 .header-text h1 span {
-  color: red;
+  color: #fa0238;
 }
 .header-text h5 {
 	font-weight: normal;
@@ -94,14 +94,20 @@ nav ul li a:hover::after {
 .header-text {
     float: left; /* float the header text to the left */
     width: 40%; /* set the width of the header text */
-	margin-left: 120px;
+	margin-left: 10px;
+	font-family: 'Poppins', sans-serif;
 }
 .header-picture {
+	flex-basis: 35%;
     float: right; /* float the picture to the right */
-    width: 40%; /* set the width of the picture */
+    /* width: 40%; /* set the width of the picture */ */
     text-align: right; /* align the picture to the right within its container */
 	/* padding-left: 155px; */
 	margin-right: 0px;
+}
+#header nav h1 {
+	font-size: 32px;
+	font-family: 'Poppins', sans-serif;
 }
 
 
@@ -191,7 +197,7 @@ p {
 
 /* ---------------Portfolio ------------------- */
 #services {
-  padding: 30px auto;
+  padding: 30px 0;
 }
 .services-list {
   display: grid;
@@ -514,14 +520,20 @@ nav .fas {
 }
 @media only screen and (max-width: 600px) {
   #header {
-    background-image: url("background_my_phone.png");
+    /* background-image: url("mypic.jpg"); */
+	background-image: none;
+	margin-bottom: -600px;
   }
   .header-text {
-    margin-top: 100%;
+    margin-top: -50%;
     font-size: 16px;
   }
   .header-text h1 {
     font-size: 30px;
+  }
+  .header-picture img {
+	  width: 200px;
+	  height: 200px;
   }
   nav .fas {
     display: block;
