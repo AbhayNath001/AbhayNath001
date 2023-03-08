@@ -290,6 +290,9 @@ p {
   font-weight: 500;
   margin-bottom: 20px;
 }
+.layer p {
+	font-size: 25px;
+}
 .layer a {
   margin-top: 20px;
   color: #ff004f;
@@ -536,6 +539,15 @@ nav .fas {
 	  width: 200px;
 	  height: 200px;
   }
+  .layer h3 {
+	  font-size: 20px;
+  }
+  .work img {
+	  height: 300px;
+  }
+  .layer p {
+	font-size: 10px;
+  }
   nav .fas {
     display: block;
     font-size: 25px;
@@ -570,9 +582,11 @@ nav .fas {
   }
   .about-col-1 {
     margin-bottom: 30px;
+    margin-left: 50px;
   }
   .about-col-2 {
     font-size: 14px;
+	margin-left: -60px;
   }
   .tab-links {
     font-size: 16px;
@@ -580,15 +594,18 @@ nav .fas {
   }
   .contact-left {
     flex-basis: 100%;
+	margin-left: -50 px;
   }
   .contact-right {
     flex-basis: 100%;
+	margin-left: 50px;
   }
   .copyright {
     font-size: 14px;
+	margin-left: -170px;
   }
   .header-text p {
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     padding-top: 310px;
   }
