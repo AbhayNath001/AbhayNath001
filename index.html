@@ -36,8 +36,17 @@
                 <div class="header-text">
                     <p>Developer</p>
                     <h1>Hi, I am <span>Abhay Nath</span> From India</h1>
-					<h5>I am a developer</h5>
+					<h5>I am a <span class="auto-type"></span></h5>
                 </div>
+				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+			<script>
+				var typed = new Typed(".auto-type", {
+					strings: ["Web Developer", "Python Developer", "Game Developer", "Fullstack Developer", "Android Developer"],
+					typeSpeed: 50,
+					backSpeed: 60,
+					loop: true
+				})
+			</script>
 				<!-- <div class="header-picture"> -->
 					<!-- <img src="mypic.png" width="100%" height="100%"> -->
 				<!-- </div> -->

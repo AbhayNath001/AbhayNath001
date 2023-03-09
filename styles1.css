@@ -91,6 +91,9 @@ nav ul li a:hover::after {
 .header-text h5 {
 	font-weight: normal;
 }
+.header-text h5 span {
+	color: #fff724;
+}
 .header-text {
     float: left; /* float the header text to the left */
     width: 40%; /* set the width of the header text */
