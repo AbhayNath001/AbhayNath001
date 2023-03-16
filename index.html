@@ -1,97 +1,184 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Abhay Nath</title>
-<link rel="icon" href="https://abhaynath.000webhostapp.com/index.jpg" />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=0.83">
-    
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-<p align="center"> <font size="30" color="blue"> OFFICIAL WEBSITE </font> </p>
-<p align="center"> <a  class="text-color-theme"><span style="color:#FFFFFF; background-color:#FF0000;">PUBLIC NOTICE - ATTENTION : This is an Official Website so be careful</span></a> </p>
-<marquee behavior="scroll" direction="left" onmouseout="this.start();" onmouseover="this.stop();"></marquee><marquee behavior="scroll" direction="left" onmouseout="this.start();" onmouseover="this.stop();"><h4 class="text-color-grayDark1"><span style="color:#FFFFFF; background-color:#737270;">This is the official youtube channel -> <a href="http://www.youtube.com/channel/UCxHjuW9-nN1fc_UbNlYtaMA" title="Abhay Nath" class="text-color-theme">ABHAY NATH</a> <- and validate your credentials for subscribing this channel. THANK YOU!</span></h4> </marquee>
-    <main>
-      <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to our website, your go-to destination for the latest in technology updates and functionalities. Our website is dedicated to providing you with the latest and most innovative technologies, as well as various functionalities like file converters, QR code generators, and more. </p>
-  <p>We also provide a platform for you to stay updated with our latest YouTube videos and learn about the ancient and scientific knowledge of Hinduism. Our mission is to be a one-stop destination for all your technology and knowledge needs. </p>
-  <p>Our team of experts is constantly working to bring you the latest and most relevant information in the field of technology and science. We strive to make our website user-friendly and easy to navigate, so that you can find what you're looking for quickly and easily.</p>
-  <p>So whether you're a tech enthusiast or just looking for some knowledge, this is the perfect place for you. Thank you for visiting our website, and we hope you enjoy your stay!</p>
-        <div id="youtube_channel">
- <a href="https://www.youtube.com/@abhaynath001/featured" target="_blank">
-  <img src="https://abhaynath.000webhostapp.com/Abhay2.jpg" alt="https://www.youtube.com/@abhaynath001/featured" width="310" height="280">
-</a>
-
- <video width="440" height="280" controls>
-<source src="https://abhaynath.000webhostapp.com/jai%20bangla.mp4" type="video/mp4">
-Your browser does not support the video tag.
- </video>
-</div>
-<div id="rating">
-          <span><b>Rate Us:</b></span>
-          <div class="stars">
-            <i class="fa fa-star" data-rating="1"></i>
-            <i class="fa fa-star" data-rating="2"></i>
-            <i class="fa fa-star" data-rating="3"></i>
-            <i class="fa fa-star" data-rating="4"></i>
-            <i class="fa fa-star" data-rating="5"></i>
-			
-          </div>
-        </div>
-      </section>
-      <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-          <li>File Format Changer</li>
-          <li>QR Code Generator</li>
-          <li>Internet Speed Tester</li>
-        </ul>
-      </section>
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="database.php" method="post">
-		  <label for="id">ID:</label>
-          <input type="number" id="id" name="id"><br>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name"><br>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email"><br>
-    <!--  <label for="message">Message:</label>
-		  <textarea id="message" name="message"></textarea>     -->
-		  <label for="password">Password:</label>
-          <input type="password" id="password" name="password"><br>
-          <label for="contact">Contact:</label>
-          <input type="tel" id="contact" name="contact"><br>
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address"><br>
-		  <label for="dob">DOB:</label>
-          <input type="date" id="dob" name="dob" max="2030-31-12"><br>
-          <label for="gender">Gender:</label>
-          <input type="radio" id="gender" name="gender" value="M">
-		  <input type="radio" id="gender" name="gender" value="F">
-		  <input type="radio" id="gender" name="gender" value="O"><br>
-          <label for="status">Status:</label>
-          <input type="number" id="status" name="status"><br>
-<br>
-<input type="submit" value="Send">
- </form>
-</section>
-</main>
-<footer>
-<p>Copyright © 2023 Abhay Nath</p>
-</footer>
-<script src="script.js"></script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Abhay Nath</title>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/png"
+            href="my.jpg">	<!-- for logo -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+	<body>
+		<header class="header">
+			<a href="#" class="logo"><span style="color:#0ef">A</span>bhay.</a>
+			<i class="bx bx-menu" id="menu-icon"></i>
+			<nav class="navbar">
+				<a href="#home" class="active">Home</a>
+				<a href="#about">About</a>
+				<a href="#services">Services</a>
+				<a href="#mywork">My Works</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+		<!-- ------------------------------------------------header section---------------------------------------------------------- -->
+		<section class="home" id="home">
+			<div class="home-content">
+				<h3>Hello, It's Me</h3>
+				<h1>Abhay Nath</h1>
+				<h3>And I'm a <span class="auto-type"></span></h3>
+				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+			<script>
+				var typed = new Typed(".auto-type", {
+					strings: ["Web Developer", "Python Developer", "Game Developer", "Fullstack Developer", "Android Developer", "YouTuber", "Video Editor"],
+					typeSpeed: 100,
+					backSpeed: 100,
+					backDelay: 1000,
+					loop: true
+				})
+			</script>
+				<p>सत्यमेव जयते नानृतं सत्येन पन्था विततो देवयानः। येनाक्रमंत्यृषयो ह्याप्तकामो यत्र तत्सत्यस्य परमं निधानम्॥
+					<audio id="audio" src="satyameva jayate.mp3"></audio>
+					<button onclick="document.getElementById('audio').play()">
+					<!-- <img src="volume-icon.png" alt="404 Error" width="20px"> -->
+					<i class='bx bx-volume-full'></i>
+					</button>
+				</p>
+				<div class="social-media">
+					<a href="https://www.youtube.com/@abhaynath001"><i class="bx bxl-youtube"></i></a>
+					<a href="https://www.linkedin.com/in/abhaynath001/"><i class="bx bxl-linkedin"></i></a>
+					<a href="https://www.facebook.com/charon.six.1213"><i class="bx bxl-facebook"></i></a>
+					<a href="#home"><i class="bx bxl-telegram"></i></a>
+				</div>
+				<a href="Abhay Nath Resume.pdf" class="btn">Download Resume</a>
+			</div>
+			<div class="home-img">
+				<img src="my1.png" alt="404 Error">
+			</div>
+		</section>
+		<!-- ---------------------------------------------about section---------------------------------------------------- -->
+		<section class="about" id="about">
+			<div class="about-img">
+				<img src="Abhay.jpg" alt="404 Error">
+			</div>
+			<div class="about-content">
+				<h2 class="heading">About <span>Me</span></h2>
+				<h3>I am a Developer</h3>
+				<p>Hello, my name is Abhay Nath. I am a dedicated and enthusiastic individual and I have completed my
+                            10th and 12th grade education at Basirhat Town High School. During my time there, I
+                            learned the importance of education, hard work, and perseverance.</p>
+				<a href="#about" class="btn">Read More</a>
+			</div>
+		</section>
+		<!-- ---------------------------------------------services section---------------------------------------------------- -->
+		<section class="services" id="services">
+			<h2 class="heading">My <span>Services</span></h2>
+			<div class="services-container">
+				<div class="services-box">
+					<i class="bx bx-code-alt"></i>
+					<h3>Web Design</h3>
+					<p>I'd love to design the frontend and work with backend of the Websites and
+						I have designed many of the Websites before.</p>
+					<a href="web-services.html" class="btn">Read More</a>
+				</div>
+				<div class="services-box">
+					<i class="bx bx-network-chart"></i>
+					<h3>Artificial Intelligent</h3>
+					<p>I provides the service to build a complete AI/ML or chatbot. In before I
+						create India's Own Artificial Intelligent.</p>
+					<a href="ai-services.html" class="btn">Read More</a>
+				</div>
+				<div class="services-box">
+					<i class="bx bx-game"></i>
+					<h3>Unity Games</h3>
+					<p>I provides the service to build a complete game on Unity. I love to create adventure
+						games and promote Indian Games.</p>
+					<a href="#services" class="btn">Read More</a>
+				</div>
+			</div>
+		</section>
+		<!-- ---------------------------------------------my work section---------------------------------------------------- -->
+		<section class="mywork" id="mywork">
+			<h2 class="heading">My <span>Works</span></h2>
+			<div class="mywork-container">
+				<div class="mywork-box">
+					<img src="supermario.avif" alt="404 Error">
+					<div class="mywork-layer">
+						<h4>Super Mario Game</h4>
+						<p>This is my Super Mario game, you can play and enjoy with it.</p>
+						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+				<div class="mywork-box">
+					<img src="RudraAI.jpg" alt="404 Error">
+					<div class="mywork-layer">
+						<h4>RUDRA India's Own AI</h4>
+						<p>Our RUDRA will perform a huge amount of task with it's AI power.</p>
+						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+				<div class="mywork-box">
+					<img src="planet_simulator.jpg" alt="404 Error">
+					<div class="mywork-layer">
+						<h4>Planetary Simulator</h4>
+						<p>This is a planet simulator based on our solar system.</p>
+						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ---------------------------------------------contact section---------------------------------------------------- -->
+		<section class="contact" id="contact">
+			<h2 class="heading">Contact <span>Me!</span></h2>
+			<a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCCSDrpxNMJfnppXnDXDcMZCcstSxKZwpWLGPdrFVFRgMnHlrxHHxzVtnQjqlTwbTwrMJV"><p><i class="bx bxl-gmail"></i>contactabhaynath@gmail.com</p></a>
+                            <!-- <p><i class="bx bxs-phone"></i>+91 ********40</p> -->
+                            <div class="social-media">
+                                <a href="https://www.youtube.com/@abhaynath001"><i class="bx bxl-youtube"></i></a>
+								<a href="https://www.linkedin.com/in/abhaynath001/"><i class="bx bxl-linkedin"></i></a>
+								<a href="https://www.facebook.com/charon.six.1213"><i class="bx bxl-facebook"></i></a>
+								<a href="https://t.me/AbhayNath001"><i class="bx bxl-telegram"></i></a>
+                            </div>
+			<form name="submit-to-google-sheet">
+				<label>Feedback</label>
+				<div class="input-box">
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="Email" placeholder="Your Email" required>
+				</div>
+				<textarea name="Message" rows="6" placeholder="Your Feedback (optional)"></textarea>
+				<button type="submit" class="btn btn2">Submit</button>
+			</form>
+			<span id="msg"></span>
+				<script>
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbwDNXh8P0iTCloyUhjFtfmALt6e2fwtO8BBVD63TtUra6FLktzg8GF3oot58G4DfRfr/exec'
+					const form = document.forms['submit-to-google-sheet']
+					const msg = document.getElementById("msg")
+					form.addEventListener('submit', e => {
+					msg.innerHTML = "Successfully Submitted"
+					e.preventDefault()
+					fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+					.then(response => {	
+					form.reset()
+					setTimeout(function(){
+					msg.innerHTML = ""
+					},100)
+					})
+					.catch(error => console.error('Error!', error.message))
+					})
+				</script>
+		</section>
+		<!-- ---------------------------------------------footer section---------------------------------------------------- -->
+		<footer class="footer">
+			<div class="footer-text">
+				<p>&copy; 2023 All Rights Reserved by Abhay Nath</p>
+			</div>
+			<div class="footer-iconTop">
+				<a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+			</div>
+		</footer>
+		<!-- ---------------------------------------------scroll reveal---------------------------------------------------- -->
+		<script src="https://unpkg.com/scrollreveal"></script>
+		
+		<script src="script.js"></script>
+	</body>
 </html>
