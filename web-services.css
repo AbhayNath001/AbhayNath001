@@ -13,10 +13,10 @@
 	position: relative;
 }
 .box {
-	width: 420px;
-	height: 550px;
+	width: 31%;
+	height: 88%;
 	min-height: 500px;
-	padding: 50px;
+	padding: 4%;
 	background: #fff;
 	text-align: center;
 	border-radius: 10px;
@@ -24,14 +24,14 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 	color: #555;
 }
 .box1 {
-	width: 420px;
-	height: 550px;
+	width: 31%;
+	height: 88%;
 	min-height: 500px;
-	padding: 50px;
+	padding: 4%;
 	background: #fff;
 	text-align: center;
 	border-radius: 10px;
@@ -39,14 +39,14 @@
 	top: 50%;
 	left: 83%;
 	transform: translate(-50%,-50%);
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 	color: #555;
 }
 .box2 {
-	width: 420px;
-	height: 550px;
+	width: 31%;
+	height: 88%;
 	min-height: 500px;
-	padding: 50px;
+	padding: 4%;
 	background: #fff;
 	text-align: center;
 	border-radius: 10px;
@@ -54,7 +54,7 @@
 	top: 50%;
 	left: 17%;
 	transform: translate(-50%,-50%);
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 	color: #555;
 }
 .box h2 {
@@ -83,7 +83,7 @@
 .box button {
 	display: block;
 	margin: 30px auto;
-	border: 0;
+	border: 1px solid #ff004f;
 	outline: 0;
 	background: #ff2166;
 	color: #fff;
@@ -134,7 +134,7 @@
 .box1 button {
 	display: block;
 	margin: 30px auto;
-	border: 0;
+	border: 1px solid blue;
 	outline: 0;
 	background: blue;
 	color: #fff;
@@ -170,7 +170,7 @@
 .box2 button {
 	display: block;
 	margin: 30px auto;
-	border: 0;
+	border: 1px solid #ff004f;
 	outline: 0;
 	background: #ff2166;
 	color: #fff;
