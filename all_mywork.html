@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>All My Works</title>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/png"
+            href="my.jpg">	<!-- for logo -->
+        <link rel="stylesheet" href="all_mywork.css">
+    </head>
+	<body>
+	<!-- -------------------------------------------header--------------------------------------------------------- -->
+		<header class="header">
+			<a href="#" class="logo"><span style="color:#0ef">My All Works</a>
+			<nav class="navbar">
+				<div class="container">
+					<form action="" class="search-bar" onsubmit="searchCards(event)">
+						<input type="text" placeholder="search my works" name="q">
+						<button type="submit"><img src="search_icon.png"></img></button>
+					</form>
+
+				</div>
+			</nav>
+		</header>
+		<script>
+			function searchCards(event) {
+				event.preventDefault(); // prevent default form submission behavior
+				const query = event.target.elements.q.value.toLowerCase();
+				const card = document.getElementById(query);
+				if (card) {
+					card.scrollIntoView({ behavior: 'smooth' }); // scroll to card
+				}
+			}
+		</script>
+	<!-- -------------------------------------------main section--------------------------------------------------------- -->
+		<section class="mywork" id="mywork">
+			<div class="mywork-container">
+				<div class="mywork-box">
+					<img src="supermario.jpeg" alt="404 Error">
+					<div class="mywork-layer" id="super mario">
+						<h4>Super Mario Game</h4>
+						<p>This is my Super Mario game, you can play and enjoy with it.</p>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+				<div class="mywork-box">
+					<img src="RudraAI.jpg" alt="404 Error">
+					<div class="mywork-layer" id="rudra ai">
+						<h4>RUDRA India's Own AI</h4>
+						<p>Our RUDRA will perform a huge amount of task with it's AI power.</p>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+				<div class="mywork-box">
+					<img src="planet_simulator.jpg" alt="404 Error">
+					<div class="mywork-layer" id="planetary simulator">
+						<h4>Planetary Simulator</h4>
+						<p>This is a planet simulator based on our solar system.</p>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+				<div class="mywork-box">
+					<img src="qrcode.png" alt="404 Error">
+					<div class="mywork-layer" id="qrcode">
+						<h4>QR Code Generator</h4>
+						<p>Generate QR Code from here to free.</p>
+						<a href="qrcode.html"><i class="bx bx-link-external"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

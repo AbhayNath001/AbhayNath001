@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-Toe</title>
+  <style>
+    body {
+      background-color: #1c1c1b;
+      color: #dfebe2;
+      margin: 0;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      max-width: 100%;
+      max-height: 100vh;
+
+    }
+	
+	body h1 {
+		color: red;
+		box-shadow: 0px 0px 2rem #0ef;
+	}
+	
+	center #reset {
+		box-shadow: 0px 0px 21px #32FC0A;
+		transition: 0.5s;
+		border: 2px solid #32FC0A;
+	}
+	
+	center #reset:hover {
+		box-shadow: none;
+		background: transparent;
+		color: #32FC0A;
+		
+	}
+
+    #container {
+      /*     margin-top:20%; */
+      display: grid;
+      grid-template-columns: repeat(3, 20vw);
+      grid-template-rows: repeat(3, 20vw);
+      box-sizing: border-box;
+
+    }
+
+    center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .b {
+      border: 1px solid white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .t {
+      border-top: 0;
+      border-top-color: red;
+
+    }
+
+    .o {
+      border-bottom: 0;
+    }
+
+    .l {
+      border-left: 0;
+    }
+
+    .r {
+      border-right: 0;
+    }
+
+    .b:hover {
+      background: #111211;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2%;
+      margin-top: 0%;
+    }
+
+    span {
+      font-size: 3rem;
+
+      /*       font-weight:bold; */
+    }
+
+    p {
+      margin-top: 3%;
+      font-size: 2rem;
+      font-style: bold;
+      text-align: center;
+      visibility: hidden;
+      margin-bottom: 2%;
+    }
+
+    #reset {
+
+      height: 1.6rem;
+      width: 5.6rem;
+      background: #32FC0A;
+      color: #1c1c1b;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.2em;
+      font-size: 1rem;
+
+    }
+
+    #reset:active {
+      background: #02a131;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
+
+    #des {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #image {
+      height: 65px;
+      visibility: hidden;
+    }
+
+    #count {
+      display: flex;
+      gap: 10%;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+
+
+    @media only screen and (min-width: 768px) {
+      #container {
+        /*     margin-top:20%; */
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        box-sizing: border-box;
+
+      }
+
+      #reset {
+        height: 2.1rem;
+        width: 6.6rem;
+        font-size: 1.2rem;
+      }
+
+      #image {
+        height: 90px;
+
+      }
+
+      p {
+        font-size: 3.2rem;
+      }
+    }
+
+    @media only screen and (min-width: 414px) and (max-width:699px) {
+      #container {
+        /*     margin-top:20%; */
+        display: grid;
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+        box-sizing: border-box;
+
+      }
+
+      #reset {
+        height: 2.1rem;
+        width: 6.6rem;
+        font-size: 1.2rem;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  <center id=count>
+    <h3 id=X>X Won - 0</h3>
+    <h3 id=O>O Won - 0</h3>
+  </center>
+  <h2 id=turn></h2>
+  <center>
+    <div id=container>
+      <div class="t b l"><span class=box></span></div>
+      <div class="t b"><span class=box></span></div>
+      <div class="t b r"><span class=box></span></div>
+      <div class="l b"><span class=box></span></div>
+      <div class="b"><span class=box></span></div>
+      <div class="r b"><span class=box></span></div>
+      <div class="b l o"><span class=box></span></div>
+      <div class="b o"><span class=box></span></div>
+      <div class="b o r"><span class=box></span></div>
+    </div>
+  </center>
+  <div id=des>
+    <p id="v">nope dude </p>
+    <img id="image" src="https://media.tenor.com/-FpRCh0JwYAAAAAi/jinzhan-lily-and-marigold.gif">
+  </div>
+  <center>
+    <button id=reset>RESTART</button>
+  </center>
+  <h5>&copy; 2023 All Rights Reserved by Abhay Nath</h5>
+  <script>
+
+    let over = false;
+    let b = document.getElementsByClassName("b")
+    let Xwins = 0
+    let Owins = 0
+
+
+    Array.from(b).forEach(element => {
+      let box = element.querySelector(".box")
+      element.addEventListener('click', () => {
+        
+        if (box.innerHTML == '' && over == false) {
+          box.innerHTML = turn
+          if (turn == 'O') {
+            box.style.color = "#bd35fc"
+
+
+
+          }
+          else if (turn == "X") {
+            box.style.color = "#3adb1a"
+          }
+          change()
+          wining()
+          document.getElementById('turn').innerText = turn + "'s turn"
+
+        }
+
+      })
+    })
+
+    let turn = "X"
+    document.getElementById('turn').innerText = turn + "'s turn"
+
+    const change = () => {
+      if (turn == "X") {
+        return turn = 'O'
+
+      }
+      else if (turn == 'O') {
+        return turn = "X"
+      }
+    }
+
+
+    const wining = () => {
+      let pattern = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ]
+
+      let box = document.getElementsByClassName('box')
+    
+      pattern.forEach(e => {
+
+        if ((box[e[0]].innerText == box[e[1]].innerText) && (box[e[1]].innerText == box[e[2]].innerText) && (box[e[0]].innerText !== "")) {
+          document.getElementById('v').innerHTML = box[e[0]].innerText + " Won  &nbsp;"
+
+          over = true
+
+          box[e[0]].style.cssText = "color:white; font-size:3.9rem;  text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #0fa,0 0 82px #0fa,0 0 92px #0fa,0 0 102px #0fa,0 0 151px #0fa;"
+          box[e[1]].style.cssText = "color:white; font-size:3.9rem;  text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #0fa,0 0 82px #0fa,0 0 92px #0fa,0 0 102px #0fa,0 0 151px #0fa;"
+          box[e[2]].style.cssText = "color:white; font-size:3.9rem;  text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #0fa,0 0 82px #0fa,0 0 92px #0fa,0 0 102px #0fa,0 0 151px #0fa;"
+          document.getElementById('v').style.visibility = "visible"
+          document.getElementById('image').style.visibility = "visible"
+          
+          window.navigator.vibrate(500);
+          
+          if (box[e[0]].innerText == "X") {
+            Xwins++
+            document.getElementById('X').innerText = "X Won - " + Xwins
+
+          }
+          else if (box[e[0]].innerText == "O") {
+            Owins++
+            document.getElementById('O').innerText = "O Won - " + Owins
+
+          }
+
+
+
+
+        }
+
+        else if ((over == false) && ((box[0].innerText !== "") && (box[1].innerText !== "") && (box[2].innerText !== "") && (box[3].innerText !== "") && (box[4].innerText !== "") && (box[5].innerText !== "") && (box[6].innerText !== "") && (box[7].innerText !== "") && (box[8].innerText !== ""))
+        ) {
+
+          //(box[e[0]].innerText !== box[e[1]].innerText) ||(box[e[1]].innerText !== box[e[2]].innerText) || (box[e[0]].innerText !== box[e[2]].innerText)
+
+          document.getElementById('v').innerHTML = "Draw "
+          document.getElementById('v').style.cssText = "visibility:visible;"
+          document.getElementById('image').style.cssText = "display:none;"
+
+
+          // console.log(box[e[0]].innerText,box[e[1]].innerText,box[e[2]].innerText)
+        }
+      }
+
+
+
+      )
+    }
+
+    let btn = document.getElementById('reset')
+    btn.addEventListener("click", () => {
+      let box = document.getElementsByClassName('box')
+      
+      for (i = 0; i < 9; i++) {
+        box[i].innerHTML = ""
+
+        over = false
+        box[i].style.cssText = "text-shadow:0 0 0 #1c1c1b;"
+
+
+      }
+      document.getElementById('v').style.visibility = "hidden"
+      document.getElementById('image').style.visibility = "hidden"
+
+    })
+
+
+  </script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@
 		<link rel="shortcut icon" type="image/png"
             href="my.jpg">	<!-- for logo -->
         <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 	<body>
 		<header class="header">
@@ -17,6 +18,7 @@
 			<nav class="navbar">
 				<a href="#home" class="active">Home</a>
 				<a href="#about">About</a>
+				<a href="#skills">My Skills</a>
 				<a href="#services">Services</a>
 				<a href="#mywork">My Works</a>
 				<a href="#contact">Contact</a>
@@ -71,6 +73,225 @@
 				<a href="#about" class="btn">Read More</a>
 			</div>
 		</section>
+		<!-- ---------------------------------------------skills section---------------------------------------------------- -->
+		<section class="skills" id="skills">
+			<div class="skill-content">
+				<h2 class="heading">My <span>Skills</span></h2>
+				<div class="container">
+			<style>
+				.checkbox-list {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					white-space: nowrap;
+				}
+				.checkbox-list label {
+					display: flex;
+					align-items: center;
+					margin-right: 20px;
+				}
+			</style>
+			<h2>
+				<div class="checkbox-list">
+					<label class="beg"><input type="checkbox" checked disabled>Beginner</label>
+					<label class="int"><input type="checkbox" checked disabled>Intermediate</label>
+					<label class="adv"><input type="checkbox" checked disabled>Advanced</label>
+				</div>
+			</h2>
+			<div class="skills">
+				<h3 class="name">HTML, CSS, Javascript</h3>
+				<div class="rating">
+					<input type="checkbox" name="web" disabled>
+					<input type="checkbox" name="web" disabled>
+					<input type="checkbox" name="web" disabled>
+					<input type="checkbox" name="web" disabled>
+					<input type="checkbox" name="web" disabled>
+					<input type="checkbox" name="web" checked disabled>
+					<input type="checkbox" name="web" checked disabled>
+					<input type="checkbox" name="web" checked disabled>
+					<input type="checkbox" name="web" checked disabled>
+					<input type="checkbox" name="web" checked disabled>
+				</div>
+			</div>
+			<div class="skills">
+				<h3 class="name">Python Programming&nbsp&nbsp&nbsp</h3>
+				<div class="rating">
+					<input type="checkbox" name="python" disabled>
+					<input type="checkbox" name="python" disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+					<input type="checkbox" name="python" checked disabled>
+				</div>
+			</div>
+			<div class="skills">
+				<h3 class="name">Java Programming&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h3>
+				<div class="rating">
+					<input type="checkbox" name="java" disabled>
+					<input type="checkbox" name="java" disabled>
+					<input type="checkbox" name="java" disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+					<input type="checkbox" name="java" checked disabled>
+				</div>
+			</div>
+			<div class="skills">
+				<h3 class="name">C/C++ Programming&nbsp&nbsp&nbsp&nbsp</h3>
+				<div class="rating">
+					<input type="checkbox" name="c/c++" disabled>
+					<input type="checkbox" name="c/c++" disabled>
+					<input type="checkbox" name="c/c++" disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+					<input type="checkbox" name="c/c++" checked disabled>
+				</div>
+			</div>
+			<div class="skills">
+				<h3 class="name">Unity Game Engine&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h3>
+				<div class="rating">
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" disabled>
+					<input type="checkbox" name="unity" checked disabled>
+					<input type="checkbox" name="unity" checked disabled>
+					<input type="checkbox" name="unity" checked disabled>
+					<input type="checkbox" name="unity" checked disabled>
+				</div>
+			</div>
+		</div>
+			</div>
+		</section>
+		<style>
+			.container {
+				width: 642px;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				padding: 1px;
+				margin-left: 20%;
+				margin-right: 20%;
+				border-radius: 10px;
+				box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+				inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+				8px 30px 30px rgba(0, 0, 0, 0.4);
+				inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+			}
+			.container h2 {
+				margin-bottom: 10px;
+				font-weight: 500;
+				color: #1f9cff;
+			}
+			.container .skills {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 10px 0;
+				padding-right: 10px;
+				box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+				inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+				8px 30px 30px rgba(0, 0, 0, 0.4);
+				inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+				transition: 0.5s;
+			}
+			.container .skills h3 {
+				min-width: 180px;
+				text-align: right;
+				padding-right: 20px;
+				color: #fff;
+				font-size: 15px;
+				font-weight: 400;
+				letter-spacing: 2px;
+			}
+			.container .skills .rating {
+				position: relative;
+				display: flex;
+				margin: 10px 0;
+				flex-direction: row-reverse;
+			}
+			.container .skills .rating input {
+				position: relative;
+				width: 35px;
+				height: 35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				-webkit-appearance: none;
+				appearance: none;
+			}
+			.container .checkbox-list label input {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				-webkit-appearance: none;
+				appearance: none;
+			}
+			.container .skills .rating input::before {
+				content: '\f005';
+				position: absolute;
+				font-family: fontAwesome;
+				font-size: 34px;
+				position: absolute;
+				left: 4px;
+				color: #030b0f;
+				transition: 0.5s;
+			}
+			.container .checkbox-list label input::before {
+				content: '\f005';
+				position: absolute;
+				font-family: fontAwesome;
+				font-size: 34px;
+				position: absolute;
+				left: 4px;
+				color: #030b0f;
+				transition: 0.5s;
+			}
+			.container .skills .rating input:checked:nth-child(1)::before,
+			.container .skills .rating input:checked:nth-child(2)::before,
+			.container .skills .rating input:checked:nth-child(3)::before {
+  			color: #18c70b;
+			}
+			.container .skills .rating input:checked:nth-child(4)::before,
+			.container .skills .rating input:checked:nth-child(5)::before,
+			.container .skills .rating input:checked:nth-child(6)::before {
+  			color: #f35009;
+			}
+			.container .skills .rating input:checked:nth-child(7)::before,
+			.container .skills .rating input:checked:nth-child(8)::before,
+			.container .skills .rating input:checked:nth-child(9)::before,
+			.container .skills .rating input:checked:nth-child(10)::before {
+  			color: #1f9cff;
+			}
+
+			.container .checkbox-list .beg input:checked:nth-child(1)::before {
+ 			 color: #1f9cff;
+			}
+			.container .checkbox-list .int input:checked:nth-child(1)::before {
+  			color: #f35009;
+			}
+			.container .checkbox-list .adv input:checked:nth-child(1)::before {
+ 			 color: #18c70b;
+			}
+		</style>
 		<!-- ---------------------------------------------services section---------------------------------------------------- -->
 		<section class="services" id="services">
 			<h2 class="heading">My <span>Services</span></h2>
@@ -103,11 +324,11 @@
 			<h2 class="heading">My <span>Works</span></h2>
 			<div class="mywork-container">
 				<div class="mywork-box">
-					<img src="supermario.avif" alt="404 Error">
+					<img src="supermario.jpeg" alt="404 Error">
 					<div class="mywork-layer">
 						<h4>Super Mario Game</h4>
 						<p>This is my Super Mario game, you can play and enjoy with it.</p>
-						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
 					</div>
 				</div>
 				<div class="mywork-box">
@@ -115,7 +336,7 @@
 					<div class="mywork-layer">
 						<h4>RUDRA India's Own AI</h4>
 						<p>Our RUDRA will perform a huge amount of task with it's AI power.</p>
-						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
 					</div>
 				</div>
 				<div class="mywork-box">
@@ -123,10 +344,11 @@
 					<div class="mywork-layer">
 						<h4>Planetary Simulator</h4>
 						<p>This is a planet simulator based on our solar system.</p>
-						<a href="#mywork"><i class="bx bx-link-external"></i></a>
+						<a href="comingsoon.html"><i class="bx bx-link-external"></i></a>
 					</div>
 				</div>
 			</div>
+			<a href="all_mywork.html"><div class="show_more"><button>Show All</button></div><a>
 		</section>
 		<!-- ---------------------------------------------contact section---------------------------------------------------- -->
 		<section class="contact" id="contact">
@@ -170,7 +392,7 @@
 		<!-- ---------------------------------------------footer section---------------------------------------------------- -->
 		<footer class="footer">
 			<div class="footer-text">
-				<p>&copy; 2023 All Rights Reserved by Abhay Nath</p>
+				<p>&copy; 2023 Abhay Nath. All Rights Reserved</p>
 			</div>
 			<div class="footer-iconTop">
 				<a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
