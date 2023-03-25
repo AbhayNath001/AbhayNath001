@@ -190,6 +190,9 @@ span {
 	margin: 2rem 0 3rem;
 }
 /* ---------------------------------------------services section---------------------------------------------------- */
+.services {
+	background: var(--second-bg-color);
+}
 .services h2 {
 	margin-bottom: 5rem;
 }
@@ -202,11 +205,11 @@ span {
 }
 .services-container .services-box {
 	flex: 1 1 30rem;
-	background: var(--second-bg-color);
+	background: var(--bg-color);
 	padding: 3rem 2rem 4rem;
 	border-radius: 2rem;
 	text-align: center;
-	border: .2rem solid var(--bg-color);
+	border: .2rem solid var(--second-bg-color);
 	transition: .5s ease;
 }
 .services-container .services-box:hover {
@@ -226,7 +229,7 @@ span {
 }
 /* ---------------------------------------------my work section---------------------------------------------------- */
 .mywork {
-	background: var(--second-bg-color);
+	background: var(--bg-color);
 }
 .mywork h2 {
 	margin-bottom: 4rem;
@@ -272,10 +275,12 @@ span {
 }
 .mywork-layer h4 {
 	font-size: 3rem;
+	filter: drop-shadow(0px 0px 4px #000);
 }
 .mywork-layer p {
 	font-size: 1.6rem;
 	margin: .3rem 0 1rem;
+	filter: drop-shadow(0px 0px 4px #000);
 }
 .mywork-layer a {
 	display: inline-flex;
@@ -291,7 +296,27 @@ span {
 	font-size: 2rem;
 	color: var(--second-bg-color);
 }
+.show_more button {
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background: var(--main-color);
+	border-radius: 4rem;
+	margin-left: 43%;
+	margin-top: 3rem;
+	box-shadow: 0 0 1rem var(--main-color);
+	font-size: 1.6rem;
+	color: var(--second-bg-color);
+	letter-spacing: .1rem;
+	font-weight: 600;
+	transition: .5s ease;
+}
+.show_more button:hover {
+	box-shadow: none;
+}
 /* ---------------------------------------------contact section---------------------------------------------------- */
+.contact {
+	background: var(--second-bg-color);
+}
 .contact h2 {
 	margin-bottom: 3rem;
 }
@@ -344,7 +369,7 @@ span {
 	padding: 1.5rem;
 	font-size: 1.6rem;
 	color: var(--text-color);
-	background: var(--second-bg-color);
+	background: var(--bg-color);
 	border-radius: .8rem;
 	margin: .7rem 0;
 }
