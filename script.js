@@ -34,7 +34,7 @@ window.onscroll = () => {
 	navbar.classList.remove('active');
 	};
 /*-------------------------------------------scroll reveal------------------------------------------------*/
-ScrollReveal({ 
+/*ScrollReveal({ 
 	// reset: true,
 	distance: '1px',
 	duration: 1000,
@@ -43,4 +43,4 @@ ScrollReveal({
 ScrollReveal().reveal('.home-content, .heading, .checkbox-list, .skills', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .mywork-box, .contact form , .show_more', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });*/
