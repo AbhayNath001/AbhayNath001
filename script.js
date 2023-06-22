@@ -36,8 +36,8 @@ window.onscroll = () => {
 /*-------------------------------------------scroll reveal------------------------------------------------*/
 ScrollReveal({ 
 	// reset: true,
-	distance: '5px',
-	duration: 2000,
+	distance: '1px',
+	duration: 1000,
 	delay: 200
 	});
 ScrollReveal().reveal('.home-content, .heading, .checkbox-list, .skills', { origin: 'top' });
