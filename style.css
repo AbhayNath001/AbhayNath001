@@ -189,6 +189,28 @@ span {
 	font-size: 1.6rem;
 	margin: 2rem 0 3rem;
 }
+/* ----------------------------------------------skills section----------------------------------------------------- */
+.container {
+				width: 90%;
+				position: relative;
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+			}
+			.container .skill img {
+				margin-top: 2rem;
+				margin-right: 10px;
+				filter: drop-shadow(0 0 0.2rem aqua);
+				width: 100px;
+				height: 100px;
+			}
+			.container .skill img:hover {
+				transform: scale(1.15);
+			}
+			.skill h3 {
+				text-align: center;
+				text-shadow: 1px 1px #ff0000;
+			}
 /* ---------------------------------------------services section---------------------------------------------------- */
 .services {
 	background: var(--second-bg-color);
@@ -495,10 +517,24 @@ span {
 	.mywork-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+	.skills .container {
+		margin-left: 0px;
+		margin-right: 0px;
+		left: 50px;
+	}
 }
 @media (max-width: 617px) {
 	.mywork-container {
 		grid-template-columns: 1fr;
+	}
+	.skills .container {
+		margin-left: 0px;
+		margin-right: 0px;
+		left: 0;
+		width: 580px;
+	}
+	.skills .container .name {
+		font-size: 10px;
 	}
 }
 @media (max-width: 450px) {
@@ -508,6 +544,10 @@ span {
 	.contact form .input-box input {
 		width: 100%;
 	}
+	.container .skill img {
+		width: 50px;
+		height: 50px;
+		}
 }
 @media (max-width: 365px) {
 	.home-img img {
@@ -523,4 +563,21 @@ span {
 		text-align: center;
 		margin-top: 2rem;
 	}
+	/* .skills .container { */
+		/* margin-left: 0px; */
+		/* margin-right: 0px; */
+		/* left: 0; */
+		/* width: 250px; */
+	/* } */
+	/* .skills .container .name { */
+		/* font-size: 10px; */
+		/* width: 200px; */
+	/* } */
+	/* .skills .container input { */
+		/* width: 200px; */
+	/* } */
+	.container .skill img {
+		width: 50px;
+		height: 50px;
+		}
 }
