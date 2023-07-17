@@ -167,6 +167,15 @@
 	font-size: 14px;
 	margin-bottom: 20px;
 }
+.box2 a {
+	text-decoration: none;
+}
+.box1 a {
+	text-decoration: none;
+}
+.box a {
+	text-decoration: none;
+}
 .box2 button {
 	display: block;
 	margin: 30px auto;

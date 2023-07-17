@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-size: 500%;
+  text-align: center;
+  box-shadow: 0rem 0rem 1.5rem #0ef;
+  background: transparent;
+  width: 40rem;
+  border: 0.3rem solid #0ef;
+  border-radius: 1rem;
+  color: #FC0A93;
+}
+@media only screen and (max-width: 600px) {
+	.center {
+		width: 30rem;
+	}
+	.center h1 {
+		font-size: 200%;
+		width: 20rem;
+	}
+}

@@ -155,7 +155,23 @@ span {
 	font-weight: 600;
 	transition: .5s ease;
 }
+.btn1 {
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background: #e6a902;
+	border-radius: 4rem;
+	box-shadow: 0 0 1rem #e6a902;
+	font-size: 1.6rem;
+	color: var(--second-bg-color);
+	letter-spacing: .1rem;
+	font-weight: 600;
+	transition: .5s ease;
+	margin-left: 10px;
+}
 .btn:hover {
+	box-shadow: none;
+}
+.btn1:hover {
 	box-shadow: none;
 }
 /* ---------------------------------------------about section---------------------------------------------------- */
@@ -199,10 +215,10 @@ span {
 			}
 			.container .skill img {
 				margin-top: 2rem;
-				margin-right: 10px;
+				margin-right: 20px;
 				filter: drop-shadow(0 0 0.2rem aqua);
-				width: 100px;
-				height: 100px;
+				width: 60px;
+				height: 60px;
 			}
 			.container .skill img:hover {
 				transform: scale(1.15);
@@ -210,6 +226,7 @@ span {
 			.skill h3 {
 				text-align: center;
 				text-shadow: 1px 1px #ff0000;
+				padding-right: 15px;
 			}
 /* ---------------------------------------------services section---------------------------------------------------- */
 .services {
@@ -469,6 +486,9 @@ span {
 	#menu-icon {
 		display: block;
 	}
+	* {
+		max-width: 100%;
+	}
 	.navbar {
 		position: absolute;
 		top: 100%;
@@ -563,19 +583,6 @@ span {
 		text-align: center;
 		margin-top: 2rem;
 	}
-	/* .skills .container { */
-		/* margin-left: 0px; */
-		/* margin-right: 0px; */
-		/* left: 0; */
-		/* width: 250px; */
-	/* } */
-	/* .skills .container .name { */
-		/* font-size: 10px; */
-		/* width: 200px; */
-	/* } */
-	/* .skills .container input { */
-		/* width: 200px; */
-	/* } */
 	.container .skill img {
 		width: 50px;
 		height: 50px;
