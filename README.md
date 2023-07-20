@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Abhay Nath</h1>
 <h3 align="center">A passionate developer in AI/ML, Web, Data Science and enthusiastic in DSA</h3>
-<img align="right" src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif" alt="coding" width=4000px>
+<img align="right" src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif" alt="coding" width=400px>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=abhaynath001&label=Profile%20views&color=0e75b6&style=flat" alt="abhaynath001" /> </p>
 
 - 🔭 I’m currently working on [My Portfolio](https://abhaynath001.github.io/AbhayNath001)
