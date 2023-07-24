@@ -1,2 +1,8 @@
-pip install python-time pytorch DateTime wikipedia pycopy-webbrowser pywhatkit scrap-engine qrcode PyAutoGUI speedtest-cli os-sys pdf2docx parse PyPDF2 pdf2image docx2pdf urllib3 pytube moviepy docx pdfreader zip-files opencv-python imutils numpy random2 torch pandas db-sqlite3 keras tensorflow opencv-python SpeechRecognition nltk pyttsx3==2.7 matplotlib
+#    ✨Write on Command Prompt✨
+<html>
+<body>
+  pip install python-time
+  pytorch DateTime wikipedia pycopy-webbrowser pywhatkit scrap-engine qrcode PyAutoGUI speedtest-cli os-sys pdf2docx parse PyPDF2 pdf2image docx2pdf urllib3 pytube moviepy docx pdfreader zip-files opencv-python imutils numpy random2 torch pandas db-sqlite3 keras tensorflow opencv-python SpeechRecognition nltk pyttsx3==2.7 matplotlib
 pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu
+</body>
+</html>
