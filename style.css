@@ -43,6 +43,9 @@ section {
 .header.sticky {
 	border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
+.header span {
+	color: #0ef;
+}
 .logo {
 	font-size: 2.5rem;
 	color: var(--text-color);
@@ -58,6 +61,13 @@ section {
 .navbar a:hover,
 .navbar a.active {
 	color: var(--main-color);
+}
+.navbar i {
+	font-size: 2.5rem;
+}
+#day_night {
+	border-radius: 50%;
+	margin-left: 2rem;
 }
 #menu-icon {
 	font-size: 3.6rem;
@@ -210,8 +220,13 @@ span {
 				width: 90%;
 				position: relative;
 				display: flex;
+				flex-wrap: wrap;
 				align-items: center;
 				flex-direction: row;
+			}
+			.container .skill {
+				flex-basis: 12.5%;
+				text-align: center;
 			}
 			.container .skill img {
 				margin-top: 2rem;
@@ -268,7 +283,7 @@ span {
 }
 /* ---------------------------------------------my work section---------------------------------------------------- */
 .mywork {
-	background: var(--bg-color);
+	/* background: var(--bg-color); */
 }
 .mywork h2 {
 	margin-bottom: 4rem;
@@ -542,6 +557,9 @@ span {
 		margin-right: 0px;
 		left: 50px;
 	}
+	.skill h3 {
+		margin-left: 10px;
+	}
 }
 @media (max-width: 617px) {
 	.mywork-container {
@@ -565,8 +583,8 @@ span {
 		width: 100%;
 	}
 	.container .skill img {
-		width: 50px;
-		height: 50px;
+		width: 40px;
+		height: 40px;
 		}
 }
 @media (max-width: 365px) {
