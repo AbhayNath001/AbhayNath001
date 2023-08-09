@@ -55,7 +55,7 @@ section {
 .navbar a {
 	font-size: 1.7rem;
 	color: var(--text-color);
-	margin-left: 4rem;
+	margin-left: 2rem;
 	transition: .3s;
 }
 .navbar a:hover,
@@ -367,9 +367,41 @@ span {
 .show_more button:hover {
 	box-shadow: none;
 }
+/* ---------------------------------------------experience section---------------------------------------------------- */
+.experience {
+	background: var(--second-bg-color);
+}
+.exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.exp img {
+	width: 8rem;
+	height: 8rem;
+	border-radius: 12px;
+	cursor: pointer;
+	box-shadow: 0 0 1rem 0 aqua;
+	max-width: 100%;
+	margin-top: 2rem;
+	margin-bottom: 5px;
+}
+.exp img:hover {
+	box-shadow: none;
+}
+.exp a h3,
+.exp h4 {
+	text-align: center;
+	margin-left: 10px;
+	color: white;
+}
+.exp a h3:hover {
+	color: aqua;
+}
 /* ---------------------------------------------contact section---------------------------------------------------- */
 .contact {
-	background: var(--second-bg-color);
+	/* background: var(--second-bg-color); */
 }
 .contact h2 {
 	margin-bottom: 3rem;
@@ -423,7 +455,7 @@ span {
 	padding: 1.5rem;
 	font-size: 1.6rem;
 	color: var(--text-color);
-	background: var(--bg-color);
+	background: var(--second-bg-color);
 	border-radius: .8rem;
 	margin: .7rem 0;
 }
@@ -552,6 +584,9 @@ span {
 	.mywork-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+	.mywork .show_more {
+		margin-left: -6%;
+	}
 	.skills .container {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -559,6 +594,16 @@ span {
 	}
 	.skill h3 {
 		margin-left: 10px;
+	}
+	.experience .container {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		flex-direction: row;
+	}
+	.exp {
+		flex-basis: 50%;
 	}
 }
 @media (max-width: 617px) {

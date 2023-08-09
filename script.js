@@ -18,25 +18,33 @@ function changeBackgroundColor() {
 	var inputFields = document.querySelectorAll('.input-box input, textarea');
 	var headings = document.querySelectorAll('.mywork-layer h4');
 	var paragraphs = document.querySelectorAll('.mywork-layer p');
+	var experience = document.querySelectorAll('.experience h4');
+	var experience_link = document.querySelectorAll('.experience .exp a h3');
 
     if (isBackgroundColorWhite) {
         // Change from white to var(--bg-color)
-        body.style.backgroundColor = 'var(--bg-color)';
-		nav.style.backgroundColor = 'var(--bg-color)';
-        body.style.color = 'var(--text-color)';
+        body.style.backgroundColor = '#1f242d';
+		nav.style.backgroundColor = '#1f242d';
+        body.style.color = '#fff';
 		header_span.style.color = '#0ef';
 		services_box.forEach(box => {
             box.style.backgroundColor = '#1f242d';
         });
 		inputFields.forEach(field => {
-			field.style.backgroundColor = '#1f242d';
+			field.style.backgroundColor = '#323946';
 			field.style.color = 'white';
 		});
 		headings.forEach(heading => {
-			heading.style.color = 'black';
+			heading.style.color = 'white';
 		});
 		paragraphs.forEach(paragraph => {
-			paragraph.style.color = 'black';
+			paragraph.style.color = 'white';
+		});
+		experience.forEach(experience => {
+			experience.style.color = 'white';
+		});
+		experience_link.forEach(experience_link => {
+			experience_link.style.color = 'white';
 		});
         button.style.color = 'var(--text-color)';
         button.style.backgroundColor = 'var(--bg-color)';
@@ -62,6 +70,12 @@ function changeBackgroundColor() {
 		});
 		paragraphs.forEach(paragraph => {
 			paragraph.style.color = 'white';
+		});
+		experience.forEach(experience => {
+			experience.style.color = 'black';
+		});
+		experience_link.forEach(experience_link => {
+			experience_link.style.color = 'black';
 		});
         button.style.color = 'black';
         button.style.backgroundColor = '#c9c6c5';
