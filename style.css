@@ -368,6 +368,14 @@ span {
 	box-shadow: none;
 }
 /* ---------------------------------------------experience section---------------------------------------------------- */
+.exp_container {
+				width: 100%;
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				flex-direction: row;
+			}
 .experience {
 	background: var(--second-bg-color);
 }
@@ -399,9 +407,49 @@ span {
 .exp a h3:hover {
 	color: aqua;
 }
+/* ---------------------------------------------certification section---------------------------------------------------- */
+.cert_container {
+				width: 100%;
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				flex-direction: row;
+			}
+.certification {
+	/* background: var(--second-bg-color); */
+}
+.cert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cert img {
+	width: 8rem;
+	height: 8rem;
+	border-radius: 12px;
+	cursor: pointer;
+	box-shadow: 0 0 1rem 0 aqua;
+	max-width: 100%;
+	margin-top: 2rem;
+	margin-bottom: 5px;
+}
+.cert img:hover {
+	box-shadow: none;
+}
+.cert a h3,
+.cert h4 {
+	text-align: center;
+	margin-left: 10px;
+	color: white;
+}
+.cert a h3:hover {
+	color: aqua;
+}
 /* ---------------------------------------------contact section---------------------------------------------------- */
 .contact {
-	/* background: var(--second-bg-color); */
+	background: var(--second-bg-color);
 }
 .contact h2 {
 	margin-bottom: 3rem;
@@ -455,7 +503,7 @@ span {
 	padding: 1.5rem;
 	font-size: 1.6rem;
 	color: var(--text-color);
-	background: var(--second-bg-color);
+	background: var(--bg-color);
 	border-radius: .8rem;
 	margin: .7rem 0;
 }
@@ -595,7 +643,7 @@ span {
 	.skill h3 {
 		margin-left: 10px;
 	}
-	.experience .container {
+	.experience .exp_container {
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
@@ -603,6 +651,16 @@ span {
 		flex-direction: row;
 	}
 	.exp {
+		flex-basis: 50%;
+	}
+	.certification .cert_container {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		flex-direction: row;
+	}
+	.cert {
 		flex-basis: 50%;
 	}
 }

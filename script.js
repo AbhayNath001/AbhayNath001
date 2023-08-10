@@ -18,8 +18,8 @@ function changeBackgroundColor() {
 	var inputFields = document.querySelectorAll('.input-box input, textarea');
 	var headings = document.querySelectorAll('.mywork-layer h4');
 	var paragraphs = document.querySelectorAll('.mywork-layer p');
-	var experience = document.querySelectorAll('.experience h4');
-	var experience_link = document.querySelectorAll('.experience .exp a h3');
+	var experience = document.querySelectorAll('.experience h4, .certification h4');
+	var experience_link = document.querySelectorAll('.experience .exp a h3, .certification .cert a h3');
 
     if (isBackgroundColorWhite) {
         // Change from white to var(--bg-color)
@@ -31,7 +31,7 @@ function changeBackgroundColor() {
             box.style.backgroundColor = '#1f242d';
         });
 		inputFields.forEach(field => {
-			field.style.backgroundColor = '#323946';
+			field.style.backgroundColor = '#1f242d';
 			field.style.color = 'white';
 		});
 		headings.forEach(heading => {
