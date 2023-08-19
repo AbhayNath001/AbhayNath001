@@ -356,6 +356,14 @@ span {
 	font-size: 2rem;
 	color: var(--second-bg-color);
 }
+.used_skills img {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	border-style: double;
+	margin-top: 1rem;
+	margin-left: 1rem;
+}
 .show_more button {
 	display: inline-block;
 	padding: 1rem 2.8rem;

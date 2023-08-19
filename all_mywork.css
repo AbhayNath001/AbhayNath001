@@ -167,6 +167,14 @@ body {
 	font-size: 1.5rem;
 	color: #323946;
 }
+.used_skills img {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	border-style: double;
+	margin-top: 1rem;
+	margin-left: 1rem;
+}
 @media (max-width: 991px) {
 	.header {
 		padding: 2rem 3%;
@@ -187,6 +195,26 @@ body {
 	}
 	.mywork-container {
 		grid-template-columns: repeat(2, 1fr);
+	}
+	.mywork-layer h4 {
+		font-size: 3.5rem;
+	}
+	.mywork-layer p {
+		font-size: 2.4rem;
+	}
+	.mywork-layer a {
+		margin-right: 5rem;
+		width: 6rem;
+		height: 6rem;
+	}
+	.mywork-layer a i {
+		display: inline-flex;
+		justify-content: center;
+		font-size: 4.5rem;
+	}
+	.used_skills img {
+		width: 6rem;
+		height: 6rem;
 	}
 }
 @media (max-width: 617px) {
