@@ -20,6 +20,7 @@ function changeBackgroundColor() {
 	var paragraphs = document.querySelectorAll('.mywork-layer p');
 	var experience = document.querySelectorAll('.experience h4, .certification h4');
 	var experience_link = document.querySelectorAll('.experience .exp a h3, .certification .cert a h3');
+	var exp_h4 = document.querySelectorAll('.exp h4 span');
 
     if (isBackgroundColorWhite) {
         // Change from white to var(--bg-color)

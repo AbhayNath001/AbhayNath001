@@ -309,7 +309,7 @@ span {
 }
 .mywork-box img {
 	width: 100%;
-	height: 40vh;
+	height: 25rem;
 	transition: .5s ease;
 }
 .mywork-box:hover img {
@@ -398,7 +398,13 @@ span {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex-basis: 25%;
+  text-align: center;
 }
+/* .container .skill { */
+				/* flex-basis: 9.09%; */
+				/* text-align: center; */
+			/* } */
 .exp img {
 	width: 8rem;
 	height: 8rem;
@@ -417,9 +423,28 @@ span {
 	text-align: center;
 	margin-left: 10px;
 	color: white;
+	font-size: 1.5rem;
 }
 .exp a h3:hover {
 	color: aqua;
+}
+.exp a h3 {
+	font-weight: 900;
+}
+.exp h4 span {
+	color: yellow;
+	animation: h4_color 4s ease-in-out infinite;
+}
+@keyframes h4_color {
+	0% {
+		color: #f24005;
+	}
+	50% {
+		color: #0fff0f;
+	}
+	100% {
+		color: #f24005;
+	}
 }
 /* ---------------------------------------------certification section---------------------------------------------------- */
 .cert_container {
@@ -438,6 +463,7 @@ span {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex-basis: 20%;
 }
 .cert img {
 	width: 8rem;
@@ -457,9 +483,13 @@ span {
 	text-align: center;
 	margin-left: 10px;
 	color: white;
+	font-size: 1.5rem;
 }
 .cert a h3:hover {
 	color: aqua;
+}
+.cert h4 span {
+	animation: h4_color 4s ease-in-out infinite;
 }
 /* ---------------------------------------------contact section---------------------------------------------------- */
 .contact {
