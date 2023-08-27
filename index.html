@@ -431,32 +431,41 @@
 								<a href="https://www.youtube.com/@abhaynath001"><i class="bx bxl-youtube"></i></a>
 								<a href="https://www.facebook.com/charon.six.1213"><i class="bx bxl-facebook"></i></a>
                             </div>
-			<form name="submit-to-google-sheet">
+			<form name="submit-to-google-sheet"><br><br><br><br><br><br>
 				<label>Feedback</label>
 				<div class="input-box">
 					<input type="text" name="Name" placeholder="Your Name" required>
 					<input type="email" name="Email" placeholder="Your Email" required>
 				</div>
-				<textarea name="Message" rows="6" placeholder="Your Feedback (optional)" required></textarea>
+				<textarea name="Message" rows="6" placeholder="Your Feedback" required></textarea>
+				<span id="msg"></span><br>
 				<button type="submit" class="btn btn2">Submit</button>
 			</form>
-			<span id="msg"></span>
 				<script>
-					const scriptURL = 'https://script.google.com/macros/s/AKfycbwDNXh8P0iTCloyUhjFtfmALt6e2fwtO8BBVD63TtUra6FLktzg8GF3oot58G4DfRfr/exec'
-					const form = document.forms['submit-to-google-sheet']
-					const msg = document.getElementById("msg")
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbwDNXh8P0iTCloyUhjFtfmALt6e2fwtO8BBVD63TtUra6FLktzg8GF3oot58G4DfRfr/exec';
+					const form = document.forms['submit-to-google-sheet'];
+					const htmlElement = document.querySelector('html'); // Select the <html> element
+					const msg = document.getElementById("msg");
+
 					form.addEventListener('submit', e => {
-					msg.innerHTML = "Successfully Submitted"
-					e.preventDefault()
-					fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-					.then(response => {	
-					form.reset()
-					setTimeout(function(){
-					msg.innerHTML = ""
-					},100)
-					})
-					.catch(error => console.error('Error!', error.message))
-					})
+					htmlElement.classList.add('loading'); // Apply loading cursor style to <html> element
+					msg.innerHTML = "Submitting...";
+					e.preventDefault();
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.then(response => {
+					htmlElement.classList.remove('loading'); // Remove loading cursor style from <html> element
+					form.reset();
+					msg.innerHTML = "Successfully Submitted";
+					setTimeout(function() {
+						msg.innerHTML = "";
+						}, 100);
+						})
+					.catch(error => {
+					htmlElement.classList.remove('loading'); // Remove loading cursor style from <html> element
+					console.error('Error!', error.message);
+						msg.innerHTML = "Submission Error";
+						});
+					});
 				</script>
 		</section>
 		<!-- ---------------------------------------------footer section---------------------------------------------------- -->
@@ -465,7 +474,7 @@
 				<p>&copy; 2023 Abhay Nath. All Rights Reserved</p>
 			</div>
 			<div class="footer-iconTop">
-				<a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+				<a href="#"><i class="bx bx-up-arrow-alt"></i></a>
 			</div>
 		</footer>
 		<!-- ---------------------------------------------scroll reveal---------------------------------------------------- -->

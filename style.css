@@ -561,6 +561,9 @@ span {
 	margin-top: 2rem;
 	cursor: pointer;
 }
+.loading {
+    cursor: wait !important;
+}
 
 /* .feedback-box { */
 	/* background-color: white; */
