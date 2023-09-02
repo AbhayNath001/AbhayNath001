@@ -24,6 +24,7 @@ import cv2                                                  #pip install opencv-
 import imutils                                              #pip install imutils
 import threading
 import winsound
+import noninput_task
 
 def video_downloader():
     Just_Say("put the youtube link")
@@ -334,4 +335,4 @@ def InputExecution(tag,query):
         Motion_Detect()
         
     elif "task" in tag:
-        task()
+        noninput_task()

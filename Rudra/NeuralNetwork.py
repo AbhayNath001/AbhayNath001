@@ -1,6 +1,8 @@
 import numpy as np                                      #pip install numpy 
 from nltk.stem.porter import PorterStemmer
 import nltk                                             #pip install nltk
+import nltk.data
+# nltk.download()
 
 Stemmer = PorterStemmer()
 
