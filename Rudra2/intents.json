@@ -1,0 +1,102 @@
+{
+	"intents":[
+		{
+			"tag":"suggest",
+			"patterns": ["so what should I choose"
+			],
+			"responses":["as per my suggetion you should attend the death ceremony. By the way, is it need to ask? you will should be die."
+			]
+		},
+		{
+			"tag":"die",
+			"patterns": ["hey what you say"
+			],
+			"responses":["nothing, you should attend the ceremony first."
+			]
+		},
+		{
+			"tag":"argue",
+			"patterns": ["no no no you said I should die"
+			],
+			"responses":["I am just joking sir! Please tell me what I do for you today"
+			]
+		},
+		{
+			"tag":"img",
+			"patterns": ["generate a creative image for me"
+			],
+			"responses":["Ok, please give me some details that I generate"
+			]
+		},
+		{
+			"tag":"details",
+			"patterns": ["A tiger on the moon roaring with indian flag"
+			],
+			"responses":["Please wait, I generate it. I will notify you when it done."
+			]
+		},
+		{
+			"tag":"facebook",
+			"patterns": ["check my facebook"
+			],
+			"responses":["You have get one notification sir."
+			]
+		},
+		{
+			"tag":"fb",
+			"patterns": ["ok tell me"
+			],
+			"responses":["Sneha Dass send a message"
+			]
+		},
+		{
+			"tag":"msg",
+			"patterns": ["what she say"
+			],
+			"responses":["hallo. phaakaa tui? kothha aachhee"
+			]
+		},
+		{
+			"tag":"die",
+			"patterns": ["hey what you say"
+			],
+			"responses":["nothing, you should attend the ceremony first."
+			]
+		},
+		{
+			"tag":"send",
+			"patterns": ["send a message to her that I am in college right now"
+			],
+			"responses":["ok, I send her a. One minute Sir, your image is complete. Can I show it?"
+			]
+		},
+		{
+			"tag":"no",
+			"patterns": ["no, first send her the message"
+			],
+			"responses":["ok, I send her a message that, right now I am in college so I can't talk with you. And this message is send by AI so please dont't mind if it's hurt you, I hope you will understand. Thank you! is it ok sir?"
+			]
+		},
+		{
+			"tag":"tell",
+			"patterns": ["great message"
+			],
+			"responses":["ok, I send it."
+			]
+		},
+		{
+			"tag":"gen_img",
+			"patterns": ["OK, now the show the image"
+			],
+			"responses":["open_image"
+			]
+		},
+		{
+			"tag":"coml",
+			"patterns": ["it's really awesome"
+			],
+			"responses":["Thank you sir!"
+			]
+		}
+	]
+}
