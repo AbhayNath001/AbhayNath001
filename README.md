@@ -40,6 +40,7 @@
     pip install nltk
     pip install pyttsx3==2.7
     pip install matplotlib
+    pip install selenium
     pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu
 </head>
  </body>
