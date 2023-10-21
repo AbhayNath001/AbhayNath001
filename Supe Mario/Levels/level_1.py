@@ -1,24 +1,37 @@
+import sys
 import pygame
 pygame.init()
 pygame.display.set_caption("Abhay Nath")
-
 from implementation import WIDTH, HEIGHT, FPS
 from implementation import Player, Block, Block_1, Block_2, Fire, get_background, draw, handle_move
+from Levels.level_2 import lvl_2
 
+def display_popup_message(message, window):
+    font = pygame.font.Font(None, 96)
+    text = font.render(message, True, (235, 64, 52))
+    text_rect = text.get_rect()
+    text_rect.center = (WIDTH // 2, HEIGHT // 2)
+    window.fill((255, 255, 255))
+    window.blit(text, text_rect)
+    pygame.display.flip()
 
 def lvl_1(window):
     clock = pygame.time.Clock()
     background, bg_image = get_background("Blue.png")
-
     block_size = 96
-
     player = Player(100, 100, 50, 50)       #100,100,50,50
+
     fire = Fire(510, HEIGHT - block_size - 324, 16, 32)
     fire1 = Fire(1110, HEIGHT - block_size - 64, 16, 32)
     fire2 = Fire(1510, HEIGHT - block_size - 324, 16, 32)
+    
     fire.on(),fire1.on(),fire2.on()
+
     floor = [Block(i * block_size, HEIGHT - block_size, block_size)
              for i in range(-WIDTH // block_size, (WIDTH * 1) // block_size)]
+    display_popup_message("Level 1", window)
+    pygame.time.delay(2000)
+    run = False
     objects = [*floor,Block(block_size * 1, HEIGHT - block_size * 3.7, block_size),fire,fire1,fire2,
                Block(block_size * 2, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 3, HEIGHT - block_size * 3.7, block_size),
@@ -62,12 +75,22 @@ def lvl_1(window):
                Block_2(block_size * 47, HEIGHT - block_size * 2, block_size),
                Block_2(block_size * 47, HEIGHT - block_size * 1, block_size),
                Block_2(block_size * 48, HEIGHT - block_size * 4, block_size),
+               Block_2(block_size * 48, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 48, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 48, HEIGHT - block_size * 1, block_size),
                Block_2(block_size * 50, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 50, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 50, HEIGHT - block_size * 1, block_size),
                Block_2(block_size * 49, HEIGHT - block_size * 3, block_size),
+               Block_2(block_size * 49, HEIGHT - block_size * 2, block_size),
+               Block_2(block_size * 49, HEIGHT - block_size * 1, block_size),
                Block_2(block_size * 51, HEIGHT - block_size * 2, block_size),
                Block_2(block_size * 52, HEIGHT - block_size * 2, block_size),
                Block_2(block_size * 51, HEIGHT - block_size * 1, block_size),
-               Block_2(block_size * 52, HEIGHT - block_size * 0, block_size),
+               Block_2(block_size * 52, HEIGHT - block_size * 1, block_size),
+               Block_2(block_size * 53, HEIGHT - block_size * 1, block_size),
+               Block_2(block_size * 54, HEIGHT - block_size * 1, block_size),
+               Block_2(block_size * 55, HEIGHT - block_size * 1, block_size),
                ]
 
     offset_x = 0         #0
@@ -94,6 +117,11 @@ def lvl_1(window):
         if ((player.rect.right - offset_x >= WIDTH - scroll_area_width) and player.x_vel > 0) or (
                 (player.rect.left - offset_x <= scroll_area_width) and player.x_vel < 0):
             offset_x += player.x_vel
+            if offset_x == 4725:    #4725
+                display_popup_message("Level 1 Completed!", window)
+                pygame.time.delay(4000)
+                run = False
+                lvl_2(window)
 
     pygame.quit()
     quit()
