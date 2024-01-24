@@ -61,7 +61,6 @@ def lvl_2(window):
         if ((player.rect.right - offset_x >= WIDTH - scroll_area_width) and player.x_vel > 0) or (
                 (player.rect.left - offset_x <= scroll_area_width) and player.x_vel < 0):
             offset_x += player.x_vel
-            print(offset_x)
             if offset_x == 4725:    #4725
                 display_popup_message("Level 2 Completed!", window)
                 pygame.time.delay(4000)

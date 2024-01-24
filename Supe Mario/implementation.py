@@ -63,12 +63,20 @@ def get_block_2(size):
     surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
     rect = pygame.Rect(0, 0, size, size)
     surface.blit(image, (0, 0), rect)
+    return pygame.transform.scale2x(surface)
+
+def get_block_3(size):
+    path = join("assets", "Terrain", "Terrain.png")
+    image = pygame.image.load(path).convert_alpha()
+    surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
+    rect = pygame.Rect(192, 0, size, size)
+    surface.blit(image, (0, 0), rect)
     return pygame.transform.scale2x(surface)      
 
 
 class Player(pygame.sprite.Sprite):
     COLOR = (255, 0, 0)
-    GRAVITY = 1.2
+    GRAVITY = 1
     SPRITES = load_sprite_sheets("MainCharacters", "MaskDude", 32, 32, True)
     ANIMATION_DELAY = 3
 
@@ -194,8 +202,14 @@ class Block_2(Object):
         super().__init__(x, y, size, size)
         block = get_block_2(size)
         self.image.blit(block, (0, 0))
-        self.mask = pygame.mask.from_surface(self.image)        
+        self.mask = pygame.mask.from_surface(self.image)  
 
+class Block_3(Object):
+    def __init__(self, x, y, size):
+        super().__init__(x, y, size, size)
+        block = get_block_3(size)
+        self.image.blit(block, (-32,-32))
+        self.mask = pygame.mask.from_surface(self.image)      
 
 class Fire(Object):
     ANIMATION_DELAY = 3
