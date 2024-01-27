@@ -19,7 +19,7 @@ def lvl_1(window):
     clock = pygame.time.Clock()
     background, bg_image = get_background("Blue.png")
     block_size = 96
-    player = Player(100, 100, 50, 50)       #100,100,50,50
+    player = Player(100, 550, 0, 0)       #100,100,50,50
 
     fire = Fire(510, HEIGHT - block_size - 324, 16, 32)
     fire1 = Fire(1110, HEIGHT - block_size - 64, 16, 32)
@@ -42,7 +42,7 @@ def lvl_1(window):
     display_popup_message("Level 1", window)
     pygame.time.delay(2000)
     run = False
-    objects = [*floor,Block(block_size * 4, HEIGHT - block_size * 3.7, block_size),fire,fire1,fire2,
+    objects = [*floor,Block(block_size * 4, HEIGHT - block_size * 3.7, block_size),#fire,fire1,fire2,
                Block(block_size * 8, HEIGHT - block_size * 3.7, block_size),
                Block_1(block_size * 9, HEIGHT - block_size * 3.7, block_size),
                Block(block_size * 10, HEIGHT - block_size * 3.7, block_size),

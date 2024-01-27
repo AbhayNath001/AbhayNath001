@@ -5,7 +5,7 @@ pygame.init()
 
 pygame.display.set_caption("Abhay Nath")
 
-WIDTH, HEIGHT = 1500, 900
+WIDTH, HEIGHT = 1400, 700   # 1500, 900
 FPS = 55
 PLAYER_VEL = 7
 
