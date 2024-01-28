@@ -139,6 +139,12 @@ span {
 	/* margin: 3rem 1.5rem 3rem 0; */
 	transition: .5s ease;
 }
+.follow p {
+	color: #fff;
+	filter: drop-shadow(0 0 0.1rem aqua);
+	margin-top: 1rem;
+	font-size: 2rem;
+}
 .social-media a {
 	display: inline-flex;
 	justify-content: center;
@@ -215,10 +221,10 @@ span {
 	line-height: 1.2;
 }
 .about-content h3 {
-	font-size: 2.6rem;
+	font-size: 2rem;
 }
 .about-content p {
-	font-size: 1.6rem;
+	font-size: 1.9rem;
 	margin: 2rem 0 3rem;
 }
 /* ----------------------------------------------skills section----------------------------------------------------- */
@@ -309,8 +315,8 @@ span {
 }
 .mywork-box img {
 	width: 100%;
-	height: 25rem;
-	max-height: 25rem;
+	height: 30rem;
+	max-height: 35rem;
 	transition: .5s ease;
 }
 .mywork-box:hover img {
@@ -412,6 +418,7 @@ span {
 	border-radius: 12px;
 	cursor: pointer;
 	box-shadow: 0 0 1rem 0 aqua;
+	border: groove aqua;
 	max-width: 100%;
 	margin-top: 2rem;
 	margin-bottom: 5px;
@@ -460,6 +467,7 @@ span {
 	border-radius: 12px;
 	cursor: pointer;
 	box-shadow: 0 0 1rem 0 aqua;
+	border: groove aqua;
 	max-width: 100%;
 	margin-top: 2rem;
 	margin-bottom: 5px;
@@ -512,26 +520,32 @@ span {
 	/* margin: 3rem 1.5rem 3rem 0; */
 	transition: .5s ease;
 }
-.contact p {
+#contactForm p {
 	font-size: 200%;
 }
-.contact form {
+#contactForm .form_marge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+#contactForm {
 	max-width: 70rem;
 	margin: 1rem auto;
 	text-align: center;
 	margin-bottom: 3rem;
 	margin-top: -3rem;
 }
-.contact form label{
-	font-size: 270%;
+#contactForm label{
+	font-size: 280%;
 }
-.contact form .input-box {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+#contactForm .input-box {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	position: relative;
 }
-.contact form .input-box input,
-.contact form textarea {
+#contactForm textarea {
 	width: 100%;
 	padding: 1.5rem;
 	font-size: 1.6rem;
@@ -539,26 +553,83 @@ span {
 	background: var(--bg-color);
 	border-radius: .8rem;
 	margin: .7rem 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
-.contact form .input-box input {
-	width: 49%;
+#contactForm .input-box input {
+	width: 100%;
+	margin-left: 10rem;
+	padding: 1.5rem;
+	font-size: 1.6rem;
+	color: var(--text-color);
+	background: var(--bg-color);
+	border-radius: .8rem;
+	margin: .7rem 0;
 }
-.contact form textarea {
+#contactForm textarea {
 	resize: none;
 }
-.contact form .btn {
+#contactForm #btn {
 	margin-top: 2rem;
 	cursor: pointer;
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background: var(--main-color);
+	border-radius: 4rem;
+	/* margin-left: 43%;
+	margin-top: 3rem; */
+	box-shadow: 0 0 1rem var(--main-color);
+	font-size: 1.6rem;
+	color: var(--second-bg-color);
+	letter-spacing: .1rem;
+	font-weight: 600;
+	transition: .5s ease;
+}
+#contactForm #btn:hover {
+	box-shadow: none;
 }
 .loading {
     cursor: wait !important;
 }
+#contactForm .error-txt {
+    color: red;
+    display: none;
+    position: absolute;
+    font-size: 1.2rem;
+	font-weight: 600;
+	background-color: #fff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-top: -1rem;
+	border-radius: 15px;
+}
+#contactForm .input-box .error-txt {
+    display: none;
+}
+#messageContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+	padding: 5rem 5rem;
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    display: none;
+	font-size: 3rem;
+	font-weight: 600;
+	width: 40%;
+	height: 20%;
+	text-align: center;
+}
+#messageContainer.success {
+    color: rgb(0, 255, 0);
+}
+#messageContainer.error {
+    color: red;
+}
 
-/* .feedback-box { */
-	/* background-color: white; */
-	/* width: 45%; */
-	/* height: 80%; */
-/* } */
 /* ---------------------------------------------footer section---------------------------------------------------- */
 .footer {
 	display: flex;
