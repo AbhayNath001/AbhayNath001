@@ -2,4 +2,3 @@ pandas
 streamlit
 matplotlib
 rdkit
-rdkit-pypi
