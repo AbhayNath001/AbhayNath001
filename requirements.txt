@@ -2,3 +2,4 @@ pandas
 streamlit
 matplotlib
 rdkit
+chemdraw
