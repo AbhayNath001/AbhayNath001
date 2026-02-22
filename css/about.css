@@ -1,0 +1,15 @@
+/* About Section */
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-text b {
+    color: var(--text-primary);
+    font-weight: 600;
+}

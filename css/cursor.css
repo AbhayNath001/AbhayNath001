@@ -1,0 +1,67 @@
+/* Custom Cursor Styles */
+body {
+    cursor: none;
+    /* Hide default cursor */
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent-color);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    background-color: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+/* Pulse Ripple Animation */
+@keyframes cursorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.cursor-ripple {
+    position: fixed;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    animation: cursorPulse 0.8s linear forwards;
+    z-index: 9998;
+    pointer-events: none;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Hover State */
+body:hover .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 242, 255, 0.05);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(112, 0, 255, 0.4);
+}

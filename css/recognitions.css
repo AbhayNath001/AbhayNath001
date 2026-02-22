@@ -1,0 +1,155 @@
+/* Recognitions Section */
+.recognitions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Columns */
+    gap: 2rem;
+}
+
+.recognition-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align content */
+    text-align: center;
+}
+
+.recognition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.recognition-role {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.recognition-img-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* 1:1 Aspect Ratio */
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recognition-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recognition-card:hover .recognition-img {
+    transform: scale(1.05);
+    /* Zoom effect on hover */
+}
+
+.recognition-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    /* Reduced margin to stick to org name */
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.recognition-org {
+    font-size: 0.95rem;
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.recognition-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.recognition-meta i {
+    color: var(--accent-secondary);
+    width: 20px;
+}
+
+.recognition-tags {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recognition-tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.recognition-tag.category.hackathon {
+    background: rgba(249, 167, 2, 0.1);
+    color: #f9a702;
+    border: 1px solid #f9a702;
+}
+
+.recognition-tag.category.workshop {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffee;
+    border: 1px solid #00ffee;
+}
+
+.recognition-tag.status.online {
+    background: rgba(0, 255, 127, 0.1);
+    color: #00ff7f;
+    border: 1px solid #00ff7f;
+}
+
+.recognition-tag.status.offline {
+    background: rgba(255, 99, 71, 0.1);
+    color: #ff6347;
+    border: 1px solid #ff6347;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .recognitions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .recognitions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,131 @@
+/* Global Variables */
+:root {
+    --bg-color: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #00f2ff;
+    /* Cyan Neon */
+    --accent-secondary: #7000ff;
+    /* Purple Neon */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--text-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    /* Animated later */
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.highlight {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 242, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

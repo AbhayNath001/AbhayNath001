@@ -1,0 +1,17 @@
+/* Main Stylesheet concatenating all modules */
+@import 'css/global.css';
+@import 'css/navbar.css';
+@import 'css/hero.css';
+@import 'css/about.css';
+@import 'css/skills.css';
+
+@import 'css/projects.css';
+@import 'css/experience.css';
+@import 'css/projects.css';
+@import 'css/experience.css';
+@import 'css/recognitions.css';
+@import 'css/contact.css';
+@import 'css/recognitions.css';
+@import 'css/contact.css';
+@import 'css/cursor.css';
+@import 'css/aura.css';

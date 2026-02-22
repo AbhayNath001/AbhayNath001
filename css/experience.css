@@ -1,0 +1,91 @@
+/* Experience Section */
+.exp-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+}
+
+/* Experience Layout Updates */
+.timeline {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 3rem;
+    /* Increased padding for larger logos */
+    margin-left: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    /* Flex to align logo and content */
+    align-items: flex-start;
+}
+
+/* Replaces the dot with a logo square */
+.timeline-logo {
+    position: absolute;
+    left: -4.5rem;
+    /* Adjust based on logo size to center on line */
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    /* Slight rounded corners for 1:1 square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.timeline-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Or contain, depending on preference */
+}
+
+.timeline-item:hover .timeline-logo {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Wrapper to handle date and text content together */
+.timeline-content-wrapper {
+    width: 100%;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.company {
+    display: block;
+    font-style: normal;
+    /* Removed italic for cleaner look */
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    border-left: 2px solid var(--accent-secondary);
+    padding-left: 0.8rem;
+}
+
+/* Remove old pseudo-element dots */
+.timeline-item::before {
+    display: none;
+}

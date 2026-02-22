@@ -1,0 +1,16 @@
+/* Aura Background */
+#aura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Behind everything */
+    pointer-events: none;
+    /* Let clicks pass through */
+    opacity: 0.6;
+    /* Subtle effect */
+    background: transparent;
+    /* Let the main dark bg show through */
+}

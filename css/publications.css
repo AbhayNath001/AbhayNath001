@@ -1,0 +1,91 @@
+/* Publications Section */
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pub-item {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--accent-secondary);
+    transition: var(--transition);
+}
+
+.pub-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.pub-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pub-venue {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.contributors {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contributors span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.contributor-avatars {
+    display: flex;
+}
+
+.avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #333;
+    border: 2px solid var(--bg-color);
+    margin-left: -10px;
+    cursor: pointer;
+}
+
+.avatar-placeholder:first-child {
+    margin-left: 0;
+}
+
+.contributor-abhay {
+    background-image: url('../contributor_img/Abhay Nath.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contributor-sanskruti_patel {
+    background-image: url('../contributor_img/Sanskruti Patel.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contributor-pranav_desai {
+    background-image: url('../contributor_img/Pranav Desai.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contributor-om_roy {
+    background-image: url('../contributor_img/Om Roy.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contributor-priyanka_silveri {
+    background-image: url('../contributor_img/Priyanka Silveri.jpg');
+    background-size: cover;
+    background-position: center;
+}
