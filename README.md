@@ -8,7 +8,7 @@
 
 - 👨‍💻 All of my projects are available at [https://abhaynath001.github.io/AbhayNath001](https://abhaynath001.github.io/AbhayNath001)
 
-- 📫 How to reach me **21dit040@charusat.edu.in**
+- 📫 How to reach me **dr.abhaynath001@gmail.com**
 
 - ⚡ Fun fact **Why does python live on land? Because it is above C level!**
 
