@@ -1,12 +1,12 @@
 ![logo](https://github.com/AbhayNath001/AbhayNath001/blob/main/Abhay%20Banner/Banner%203.jpg)
 <h1 align="center">Hi 👋, I'm Abhay Nath</h1>
-<h3 align="center">A passionate developer in AI/ML, Web, Data Science and enthusiastic in DSA</h3>
+<h3 align="center">AI-ML Research Scientist | Ex-Research Intern at Indian Statistical Institute (ISI) - Kolkata</h3>
 <img align="right" src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif" alt="coding" width=400px>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=abhaynath001&label=Profile%20views&color=0e75b6&style=flat" alt="abhaynath001" /> </p>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=abhaynath001&label=Profile%20views&color=0e75b6&style=flat" alt="abhaynath001" /> <img src="https://img.shields.io/github/stars/AbhayNath001"></a> </p>
 
-- 🔭 I’m currently working on [My Portfolio](https://abhaynath001.github.io/AbhayNath001)
+- 🔭 Check [My Portfolio](https://abhaynath001.github.io/AbhayNath001)
 
-- 👨‍💻 All of my projects are available at [https://abhaynath001.github.io/AbhayNath001](https://abhaynath001.github.io/AbhayNath001)
+- 👨‍💻 Connect with me on LinkedIn [https://www.linkedin.com/in/abhaynath001/](https://www.linkedin.com/in/abhaynath001/)
 
 - 📫 How to reach me **dr.abhaynath001@gmail.com**
 
